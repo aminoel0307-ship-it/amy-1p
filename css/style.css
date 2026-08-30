@@ -540,45 +540,73 @@ main { padding-top: 56px; }
   background: var(--color-gold-deep);
 }
 
-/* ---------- Curriculum grid ---------- */
-.curriculum-grid {
+/* ---------- Curriculum cards ---------- */
+.curriculum-cards {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1px;
-  background: rgba(198, 161, 91, 0.25);
-  border: 1px solid rgba(198, 161, 91, 0.25);
+  gap: 16px;
+  margin-top: 8px;
 }
 
 .curriculum-card {
-  background: var(--color-black);
-  padding: 26px 24px;
-  display: flex;
-  align-items: baseline;
-  gap: 18px;
+  background: var(--color-black-2);
+  border: 1px solid rgba(198, 161, 91, 0.25);
+  border-radius: 2px;
+  padding: 28px 26px;
+}
+
+.curriculum-card > * + * {
+  margin-top: 10px;
 }
 
 .curriculum-card__num {
   font-family: var(--font-serif);
-  font-size: 1.2rem;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
   color: var(--color-gold);
-  flex-shrink: 0;
+  margin: 0;
+}
+
+.curriculum-card__title {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: 1.12rem;
+  line-height: 1.6;
+  color: var(--color-white);
+  margin: 0;
 }
 
 .curriculum-card__text {
-  font-size: 0.95rem;
-  line-height: 1.7;
-  color: var(--color-ivory);
+  font-size: 0.88rem;
+  line-height: 1.85;
+  color: rgba(246, 241, 231, 0.75);
+  margin: 0;
 }
 
-.curriculum-card--wide {
-  grid-column: 1 / -1;
-}
-.curriculum-card--wide .curriculum-card__text {
-  color: var(--color-gold-light);
+@media (min-width: 769px) {
+  .curriculum-cards { grid-template-columns: 1fr 1fr; gap: 20px; }
 }
 
-@media (min-width: 640px) {
-  .curriculum-grid { grid-template-columns: 1fr 1fr; }
+/* ---------- Curriculum closing ---------- */
+.curriculum-closing {
+  margin-top: 56px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.section__emphasis--lg {
+  font-size: clamp(1.35rem, 5.2vw, 2rem);
+  margin: 0 0 20px;
+}
+
+.curriculum-closing__brand {
+  font-family: var(--font-serif);
+  font-size: clamp(1rem, 2.6vw, 1.2rem);
+  letter-spacing: 0.1em;
+  color: var(--color-gold);
+  margin: 0 0 36px;
 }
 
 /* ---------- Profile ---------- */
