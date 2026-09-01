@@ -12,7 +12,7 @@ js/config.js    … CTAリンク先の設定（ここを書き換えるだけで
 js/script.js    … CTAリンクの反映など最小限のJS
 favicon.svg     … ファビコン
 og-image.png    … OGP/SNSシェア用画像（1200×630）
-images/         … 講師写真などページ内で使う画像を置くフォルダ（下記「講師写真の差し替え方法」参照）
+amy-profile.jpg … 講師（Akemi Watanabe / Amy）のプロフィール写真（下記「講師写真の差し替え方法」参照）
 ```
 
 ## ローカルでの表示確認
@@ -40,17 +40,21 @@ window.SITE_CONFIG = {
 
 ## 講師写真の差し替え方法
 
-「PROFILE／講師紹介」セクションの写真は `images/amy-profile.jpg` を表示する設定になっています。
-まだこのファイルが存在しないため、現状は画像が壊れて見える（プレースホルダーアイコンが出る）状態です。以下の手順で実際の写真に差し替えてください。
+「PROFILE／講師紹介」セクションの写真は、リポジトリ直下（`index.html` と同じ階層）にある `amy-profile.jpg` を表示する設定になっています。
+黒×ゴールドの二重ラインフレームで縦長（3:4）に切り抜いて表示され、横長・正方形の写真でも `object-fit: cover` により自動できれいにトリミングされます。
 
-1. 掲載したい顔写真（またはポートレート写真）を1枚用意する
-   - 縦長（例: 幅1000px × 高さ1333px など、縦:横 = 4:3 に近い比率）が最もきれいに収まります
-   - 正方形や横長の写真でも表示は可能です（自動でトリミングされます）
-2. そのファイル名を `amy-profile.jpg` に変更する（PNGを使う場合は `amy-profile.png` にし、`index.html` 内の拡張子も後述の通り合わせてください）
-3. リポジトリの `images` フォルダの中に、そのファイルを追加する
-   - GitHubのWeb画面から行う場合: リポジトリを開く →「images」フォルダに入る →「Add file」→「Upload files」→ 写真ファイルをドラッグ＆ドロップ →「Commit changes」
-4. （PNGファイルを使った場合のみ）`index.html` を開き、`src="images/amy-profile.jpg"` の部分を `src="images/amy-profile.png"` に書き換えて保存する
-5. ページを開き直して（またはブラウザの再読み込みをして）、写真が正しく表示されることを確認する
+写真を新しいものに差し替えたい場合は、以下の手順で上書きしてください。
+
+1. 掲載したい新しい写真を1枚用意する（横長・縦長・正方形いずれでも構いません）
+2. そのファイル名を `amy-profile.jpg` にする（PNGを使う場合は `amy-profile.png` にし、`index.html` 内の拡張子も後述の通り合わせてください）
+3. GitHubのリポジトリ画面（`https://github.com/aminoel0307-ship-it/amy-1p`）を開く
+4. 一覧から既存の `amy-profile.jpg` をクリックして開く
+5. 右上の鉛筆アイコン（Edit this file）の隣にある「...」メニュー、または削除→再アップロードの手順で新しいファイルに置き換える
+   - もっとも簡単な方法: 一度 `amy-profile.jpg` を削除して commit → トップ画面の「Add file」→「Upload files」から新しい写真（ファイル名 `amy-profile.jpg`）をドラッグ＆ドロップして commit
+6. （PNGファイルを使った場合のみ）`index.html` を開き、`src="amy-profile.jpg"` の部分を `src="amy-profile.png"` に書き換えて保存する
+7. ページを開き直して（またはブラウザの再読み込みをして）、写真が正しく表示されることを確認する
+
+写真の中で特に見せたい部分（顔や手など）が切り抜きで見切れてしまう場合は、`index.html` 内の `style="object-position: 62% center;"` の数値（0%〜100%、右にずらすほど数値を大きく）を調整すると、トリミング位置を左右に微調整できます。
 
 うまく表示されない場合は、ファイル名の大文字・小文字やスペルが `amy-profile.jpg` と完全に一致しているかをご確認ください。
 
@@ -60,7 +64,7 @@ window.SITE_CONFIG = {
 - `index.html` 内 `<link rel="canonical">` と OGP用URL（`og:url` / `og:image` / `twitter:image`）の `https://example.com/` を本番ドメインに変更
 - フッターの「プライバシーポリシー」「特定商取引法に基づく表記」「お問い合わせ」リンク（現在は仮のリンク`#`です）
 - 必要に応じて `og-image.png` を正式なブランドデザインに差し替え
-- 講師写真（`images/amy-profile.jpg`）の追加（上記「講師写真の差し替え方法」参照）
+- 講師写真（`amy-profile.jpg`）を差し替える場合は上記「講師写真の差し替え方法」参照
 
 ## デザイン意図
 
