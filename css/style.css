@@ -1158,6 +1158,10 @@ main { padding-top: 56px; }
   max-width: 720px;
 }
 
+.beautyworld__text + .beautyworld__text {
+  margin-top: 20px;
+}
+
 @media (min-width: 769px) {
   .beautyworld__photos {
     flex-direction: row;
@@ -1170,6 +1174,9 @@ main { padding-top: 56px; }
   .beautyworld__text {
     margin: 32px auto 0;
     text-align: center;
+  }
+  .beautyworld__text + .beautyworld__text {
+    margin-top: 22px;
   }
 }
 
