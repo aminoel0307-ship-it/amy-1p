@@ -883,6 +883,14 @@ main { padding-top: 56px; }
   margin: 0;
 }
 
+@media (max-width: 639px) {
+  .section--profile { padding-bottom: 40px; }
+  .profile__role { margin-bottom: 16px; }
+  .profile__role p { margin-bottom: 3px; }
+  .profile__prose p + p { margin-top: 14px; }
+  .profile__text { font-size: 0.86rem; line-height: 1.75; }
+}
+
 @media (min-width: 640px) {
   .profile { flex-direction: row; align-items: flex-start; }
   .profile__photo-frame { align-self: flex-start; }
