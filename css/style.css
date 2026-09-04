@@ -1250,6 +1250,26 @@ main { padding-top: 56px; }
   border: 1px solid rgba(198, 161, 91, 0.3);
 }
 
+.worldwide__group {
+  margin-top: 10px;
+}
+
+.worldwide__group img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid rgba(198, 161, 91, 0.4);
+  border-radius: 2px;
+}
+
+.worldwide__group-caption {
+  margin: 8px 0 0;
+  font-size: 0.72rem;
+  letter-spacing: 0.03em;
+  color: rgba(230, 205, 151, 0.65);
+  text-align: center;
+}
+
 .worldwide__caption {
   margin: 14px 0 0;
   font-size: 0.78rem;
