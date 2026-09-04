@@ -281,6 +281,21 @@ main { padding-top: 56px; }
   align-items: center;
 }
 
+.hero__col {
+  display: contents;
+}
+
+.eyebrow,
+.hero__title,
+.hero__lead,
+.hero__brand {
+  order: 1;
+}
+.hero__media { order: 2; }
+.hero__achievements { order: 3; }
+.hero__event { order: 4; }
+.hero__cta-group { order: 5; }
+
 .eyebrow {
   font-size: 0.72rem;
   letter-spacing: 0.28em;
@@ -378,33 +393,55 @@ main { padding-top: 56px; }
   color: rgba(246, 241, 231, 0.72);
 }
 
-.hero__stats {
+.hero__media {
+  width: 100%;
+  max-width: 340px;
+  margin: 0 0 24px;
+}
+
+.hero__photo {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0 0 16px;
+}
+
+.hero__photo-caption {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-size: 0.82rem;
+  line-height: 1.7;
+  letter-spacing: 0.04em;
+  color: var(--color-gold-light);
+}
+
+.hero__achievements {
   display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  justify-content: center;
-  row-gap: 6px;
-  column-gap: 8px;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  max-width: 340px;
   margin: 0 0 32px;
-  font-size: 0.84rem;
-  color: rgba(246, 241, 231, 0.75);
+  padding-top: 20px;
+  border-top: 1px solid rgba(198, 161, 91, 0.3);
+  font-size: 0.9rem;
+  color: rgba(246, 241, 231, 0.8);
+  text-align: center;
 }
 
-.hero__stats span:not(.hero__stats-sep) {
-  white-space: nowrap;
-}
-
-.hero__stats-num {
+.hero__achievements-num {
   font-family: var(--font-serif);
   font-weight: 700;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   color: var(--color-gold-light);
   font-variant-numeric: tabular-nums;
-  margin: 0 1px;
+  margin: 0 2px;
 }
 
-.hero__stats-sep {
-  color: rgba(198, 161, 91, 0.5);
+.hero__cta-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .hero__cta-note {
@@ -412,6 +449,37 @@ main { padding-top: 56px; }
   font-size: 0.76rem;
   letter-spacing: 0.02em;
   color: rgba(246, 241, 231, 0.55);
+}
+
+@media (min-width: 769px) {
+  .hero__inner {
+    max-width: var(--max-width);
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    column-gap: 56px;
+    align-items: center;
+    text-align: left;
+  }
+
+  .hero__col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .hero__col--left { align-items: flex-start; text-align: left; }
+  .hero__col--right { align-items: center; }
+
+  .eyebrow, .hero__title, .hero__lead, .hero__brand,
+  .hero__media, .hero__achievements, .hero__event, .hero__cta-group {
+    order: initial;
+  }
+
+  .hero__event { max-width: 460px; }
+  .hero__event-date { justify-content: flex-start; }
+  .hero__cta-group { align-items: flex-start; }
+
+  .hero__media { max-width: 400px; }
+  .hero__achievements { max-width: 380px; }
 }
 
 .hero__scroll {
