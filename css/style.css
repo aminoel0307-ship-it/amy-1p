@@ -1116,6 +1116,121 @@ main { padding-top: 56px; }
   color: rgba(246, 241, 231, 0.4);
 }
 
+/* ---------- Worldwide education ---------- */
+.section--worldwide {
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(198, 161, 91, 0.1), transparent 60%),
+    var(--color-black);
+}
+
+.worldwide {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin-top: 8px;
+}
+
+.worldwide__main img {
+  display: block;
+  width: 100%;
+  border: 1px solid rgba(198, 161, 91, 0.4);
+  border-radius: 2px;
+}
+
+.worldwide__sub-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.worldwide__sub-grid img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border: 1px solid rgba(198, 161, 91, 0.3);
+}
+
+.worldwide__caption {
+  margin: 14px 0 0;
+  font-size: 0.78rem;
+  letter-spacing: 0.03em;
+  color: rgba(230, 205, 151, 0.65);
+  text-align: center;
+}
+
+.worldwide__lead {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: clamp(1.2rem, 3.6vw, 1.5rem);
+  color: var(--color-gold-light);
+  margin: 0 0 20px;
+}
+
+.worldwide__countries {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 0 0 24px;
+}
+
+.worldwide__countries li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid rgba(198, 161, 91, 0.4);
+  background: rgba(198, 161, 91, 0.06);
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  color: var(--color-ivory);
+}
+
+.worldwide__countries li span {
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+.worldwide__note {
+  font-size: 0.92rem;
+  line-height: 1.9;
+  color: rgba(246, 241, 231, 0.8);
+  margin: 0 0 32px;
+  padding-bottom: 28px;
+  border-bottom: 1px solid rgba(198, 161, 91, 0.25);
+}
+
+.worldwide__quote-open,
+.worldwide__quote-line,
+.worldwide__quote-close {
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--color-ivory);
+  margin: 0 0 18px;
+}
+
+.worldwide__quote-close {
+  color: var(--color-gold-light);
+  font-weight: 700;
+  margin-bottom: 0;
+}
+
+.worldwide__flow {
+  margin: 4px 0 22px;
+}
+
+@media (min-width: 769px) {
+  .worldwide {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 56px;
+  }
+  .worldwide__photos { flex: 1.05; }
+  .worldwide__body { flex: 0.95; }
+}
+
 /* ---------- Larger breakpoints ---------- */
 @media (min-width: 900px) {
   :root { --section-pad-x: clamp(40px, 6vw, 80px); }
