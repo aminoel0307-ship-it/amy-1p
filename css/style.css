@@ -806,11 +806,18 @@ main { padding-top: 56px; }
 .profile__alias { color: var(--color-gold); font-size: 1rem; }
 
 .profile__role {
-  font-size: 0.82rem;
-  letter-spacing: 0.06em;
-  color: var(--color-gold-light);
-  margin: 0 0 16px;
+  margin: 0 0 20px;
 }
+
+.profile__role p {
+  font-size: 0.8rem;
+  letter-spacing: 0.03em;
+  line-height: 1.6;
+  color: var(--color-gold-light);
+  margin: 0 0 4px;
+}
+
+.profile__role p:last-child { margin-bottom: 0; }
 
 .profile__stats {
   display: flex;
@@ -851,12 +858,29 @@ main { padding-top: 56px; }
   margin-left: 2px;
 }
 
+.profile__prose {
+  margin: 0;
+  max-width: 640px;
+}
+
+.profile__prose p + p {
+  margin-top: 18px;
+}
+
 .profile__text {
   font-size: 0.94rem;
   line-height: 2;
   color: rgba(246, 241, 231, 0.82);
   margin: 0;
-  max-width: 640px;
+}
+
+.profile__quote {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--color-gold-light);
+  margin: 0;
 }
 
 @media (min-width: 640px) {
