@@ -1116,6 +1116,63 @@ main { padding-top: 56px; }
   color: rgba(246, 241, 231, 0.4);
 }
 
+/* ---------- Beautyworld Japan ---------- */
+.section--beautyworld {
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(198, 161, 91, 0.1), transparent 60%),
+    var(--color-black);
+}
+
+.beautyworld {
+  margin-top: 8px;
+}
+
+.beautyworld__photos {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.beautyworld__photos img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border: 1px solid rgba(198, 161, 91, 0.4);
+  border-radius: 2px;
+}
+
+.beautyworld__caption {
+  margin: 14px 0 0;
+  font-size: 0.78rem;
+  letter-spacing: 0.03em;
+  color: rgba(230, 205, 151, 0.65);
+  text-align: center;
+}
+
+.beautyworld__text {
+  font-size: 0.95rem;
+  line-height: 1.9;
+  color: rgba(246, 241, 231, 0.85);
+  margin: 28px 0 0;
+  max-width: 720px;
+}
+
+@media (min-width: 769px) {
+  .beautyworld__photos {
+    flex-direction: row;
+    gap: 24px;
+  }
+  .beautyworld__photos img {
+    flex: 1;
+    min-width: 0;
+  }
+  .beautyworld__text {
+    margin: 32px auto 0;
+    text-align: center;
+  }
+}
+
 /* ---------- Worldwide education ---------- */
 .section--worldwide {
   background:
