@@ -159,6 +159,13 @@ ul, ol { padding: 0; list-style: none; }
 }
 .btn-gold:hover { box-shadow: 0 12px 36px rgba(212, 175, 55, 0.4), inset 0 1px 0 rgba(255,255,255,0.4); transform: translateY(-1px); }
 
+.btn--stacked {
+  flex-direction: column;
+  gap: 2px;
+  padding-top: 16px;
+  padding-bottom: 13px;
+}
+.btn__label { display: block; }
 .btn-gold__sub {
   display: block;
   font-family: var(--font-sans);
@@ -166,7 +173,6 @@ ul, ol { padding: 0; list-style: none; }
   font-weight: 500;
   letter-spacing: 0.04em;
   opacity: 0.75;
-  margin-top: 3px;
 }
 
 .btn-line {
@@ -231,14 +237,13 @@ ul, ol { padding: 0; list-style: none; }
   width: auto;
 }
 
-/* ---------- ファーストビュー ---------- */
+/* ---------- ファーストビュー ----------
+   Instagram広告経由のスマホ流入を想定し、CTAが
+   スクロールなしで見える高さ（コンテンツ量ベース）に最適化。
+   100svh固定にしない＝インアプリブラウザの狭い実視野でもCTAが必ず見える。 */
 .hero {
   position: relative;
-  padding-top: 0;
-  padding-bottom: 0;
-  min-height: 100svh;
-  display: flex;
-  align-items: flex-end;
+  min-height: 440px;
   background: var(--c-black);
 }
 .hero__media {
@@ -250,64 +255,79 @@ ul, ol { padding: 0; list-style: none; }
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 50% 18%;
-  filter: grayscale(12%) brightness(0.72);
+  object-position: 50% 14%;
+  filter: grayscale(12%) brightness(0.68);
 }
 .hero__media::after {
   content: "";
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(180deg, rgba(10,10,10,0.55) 0%, rgba(10,10,10,0.35) 32%, rgba(10,10,10,0.92) 88%),
-    linear-gradient(90deg, rgba(10,10,10,0.55) 0%, rgba(10,10,10,0.05) 55%);
+    linear-gradient(180deg, rgba(10,10,10,0.35) 0%, rgba(10,10,10,0.55) 45%, rgba(10,10,10,0.94) 100%),
+    linear-gradient(90deg, rgba(10,10,10,0.5) 0%, rgba(10,10,10,0.05) 55%);
 }
 .hero__content {
   position: relative;
   z-index: 1;
   width: 100%;
-  padding: 120px 24px 40px;
+  padding: 34px 20px 26px;
 }
 .hero__badge {
   display: inline-block;
-  font-size: 11px;
-  letter-spacing: 0.18em;
+  font-size: 10.5px;
+  letter-spacing: 0.16em;
   color: var(--c-gold);
   border: 1px solid rgba(212, 175, 55, 0.5);
-  padding: 6px 14px;
+  padding: 5px 12px;
   border-radius: 999px;
-  margin-bottom: 22px;
+  margin-bottom: 16px;
 }
 .hero__title {
   font-family: var(--font-serif);
   font-weight: 600;
-  font-size: clamp(30px, 8.6vw, 52px);
-  line-height: 1.45;
+  font-size: clamp(28px, 8.6vw, 52px);
+  line-height: 1.38;
   color: var(--c-white);
-  margin-bottom: 18px;
+  margin-bottom: 12px;
   text-shadow: 0 2px 18px rgba(0,0,0,0.4);
 }
 .hero__catch {
   font-family: var(--font-serif);
-  font-size: clamp(16px, 4.4vw, 20px);
+  font-size: clamp(15px, 4.2vw, 20px);
   color: var(--c-gold);
-  letter-spacing: 0.04em;
-  margin-bottom: 20px;
+  letter-spacing: 0.03em;
+  margin-bottom: 22px;
 }
-.hero__desc {
-  font-size: 14.5px;
-  line-height: 2;
+.hero .cta-stack { align-items: stretch; max-width: 420px; margin: 0; gap: 0; }
+.hero__line-link {
+  display: block;
+  max-width: 420px;
+  margin: 12px 0 0;
+  padding: 8px 4px;
+  text-align: center;
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--c-gold);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: rgba(212, 175, 55, 0.5);
+}
+.hero__trust {
+  margin-top: 16px;
+  font-size: 11px;
+  letter-spacing: 0.02em;
   color: var(--c-text-on-dark-sub);
-  max-width: 520px;
-  margin-bottom: 30px;
 }
-.hero__desc strong { color: var(--c-text-on-dark); font-weight: 700; }
-.hero .cta-stack { align-items: stretch; max-width: 420px; margin-left: 0; margin-right: 0; }
 @media (min-width: 620px) {
-  .hero .cta-stack { align-items: flex-start; }
+  .hero .cta-stack, .hero__line-link { margin-left: 0; margin-right: auto; }
 }
 
 @media (min-width: 900px) {
-  .hero__content { padding: 160px 40px 72px; max-width: 1040px; margin: 0 auto; }
+  .hero { min-height: 620px; }
+  .hero__content { padding: 132px 40px 84px; max-width: 1040px; margin: 0 auto; }
+  .hero__badge { margin-bottom: 22px; }
+  .hero__title { margin-bottom: 18px; }
+  .hero__catch { margin-bottom: 30px; }
 }
 
 /* ---------- 目次ドット（スクロール位置の演出。控えめ） ---------- */
@@ -736,36 +756,6 @@ ul, ol { padding: 0; list-style: none; }
 .sticky-cta .btn-gold { flex: 1 1 auto; }
 @media (min-width: 769px) {
   .sticky-cta { display: none; }
-}
-
-/* ---------- ヒーロー：数字での信頼訴求 ---------- */
-.hero__stats {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0;
-  margin: 4px 0 28px;
-}
-.hero__stat {
-  display: flex;
-  flex-direction: column;
-  gap: 3px;
-  padding: 0 18px 0 0;
-  margin-right: 18px;
-  border-right: 1px solid rgba(212, 175, 55, 0.3);
-}
-.hero__stat:last-child { border-right: none; margin-right: 0; padding-right: 0; }
-.hero__stat b {
-  font-family: var(--font-serif);
-  font-size: clamp(20px, 5.4vw, 27px);
-  line-height: 1;
-  color: var(--c-gold);
-  font-weight: 600;
-}
-.hero__stat span {
-  font-size: 10.5px;
-  letter-spacing: 0.03em;
-  color: var(--c-text-on-dark-sub);
-  white-space: nowrap;
 }
 
 .scroll-cue {
