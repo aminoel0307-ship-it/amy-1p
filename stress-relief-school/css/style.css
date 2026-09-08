@@ -19,11 +19,11 @@
   --font-serif: "Shippori Mincho", "Noto Serif JP", "Hiragino Mincho ProN", serif;
   --font-sans: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
 
-  --gap-section-y: clamp(56px, 12vw, 108px);
+  --gap-section-y: clamp(64px, 13vw, 116px);
   --gap-inner: clamp(20px, 6vw, 32px);
   --radius: 4px;
   --shadow-gold: 0 8px 28px rgba(212, 175, 55, 0.18);
-  --sticky-cta-h: 64px;
+  --sticky-cta-h: 68px;
 }
 
 /* ---------- リセット / ベース ---------- */
@@ -62,6 +62,9 @@ ul, ol { padding: 0; list-style: none; }
 .section {
   padding: var(--gap-section-y) 0;
   overflow: hidden;
+}
+.section--tight {
+  padding: calc(var(--gap-section-y) * 0.5) 0 calc(var(--gap-section-y) * 0.62);
 }
 .section__inner {
   max-width: 480px;
@@ -134,11 +137,11 @@ ul, ol { padding: 0; list-style: none; }
   gap: 8px;
   width: 100%;
   max-width: 420px;
-  padding: 17px 24px;
+  padding: 18px 24px;
   font-family: var(--font-sans);
-  font-size: 15px;
+  font-size: 15.5px;
   font-weight: 700;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.07em;
   text-align: center;
   text-decoration: none;
   border-radius: var(--radius);
@@ -149,11 +152,22 @@ ul, ol { padding: 0; list-style: none; }
 .btn:active { transform: translateY(1px); }
 
 .btn-gold {
-  background: linear-gradient(135deg, #f2d67a 0%, var(--c-gold) 45%, var(--c-gold-deep) 100%);
+  background: linear-gradient(135deg, #f6dd8e 0%, var(--c-gold) 45%, var(--c-gold-deep) 100%);
   color: #201703;
-  box-shadow: var(--shadow-gold);
+  border-color: rgba(255, 240, 195, 0.5);
+  box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3), inset 0 1px 0 rgba(255,255,255,0.35);
 }
-.btn-gold:hover { box-shadow: 0 10px 32px rgba(212, 175, 55, 0.28); }
+.btn-gold:hover { box-shadow: 0 12px 36px rgba(212, 175, 55, 0.4), inset 0 1px 0 rgba(255,255,255,0.4); transform: translateY(-1px); }
+
+.btn-gold__sub {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 10.5px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  opacity: 0.75;
+  margin-top: 3px;
+}
 
 .btn-line {
   background: transparent;
@@ -722,6 +736,316 @@ ul, ol { padding: 0; list-style: none; }
 .sticky-cta .btn-gold { flex: 1 1 auto; }
 @media (min-width: 769px) {
   .sticky-cta { display: none; }
+}
+
+/* ---------- ヒーロー：数字での信頼訴求 ---------- */
+.hero__stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+  margin: 4px 0 28px;
+}
+.hero__stat {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 0 18px 0 0;
+  margin-right: 18px;
+  border-right: 1px solid rgba(212, 175, 55, 0.3);
+}
+.hero__stat:last-child { border-right: none; margin-right: 0; padding-right: 0; }
+.hero__stat b {
+  font-family: var(--font-serif);
+  font-size: clamp(20px, 5.4vw, 27px);
+  line-height: 1;
+  color: var(--c-gold);
+  font-weight: 600;
+}
+.hero__stat span {
+  font-size: 10.5px;
+  letter-spacing: 0.03em;
+  color: var(--c-text-on-dark-sub);
+  white-space: nowrap;
+}
+
+.scroll-cue {
+  position: absolute;
+  left: 50%;
+  bottom: 14px;
+  transform: translateX(-50%);
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  z-index: 1;
+  color: var(--c-text-on-dark-sub);
+  font-size: 10px;
+  letter-spacing: 0.24em;
+}
+.scroll-cue__line {
+  width: 1px;
+  height: 26px;
+  background: linear-gradient(180deg, var(--c-gold), transparent);
+  animation: scroll-cue-move 2.6s ease-in-out infinite;
+  transform-origin: top center;
+}
+@keyframes scroll-cue-move {
+  0%, 100% { transform: scaleY(0.55); opacity: 0.4; }
+  50% { transform: scaleY(1); opacity: 1; }
+}
+@media (min-width: 460px) and (min-height: 640px) {
+  .scroll-cue { display: flex; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .scroll-cue__line { animation: none; opacity: 0.7; }
+}
+
+/* ---------- 未来ロードマップ（学ぶと未来が変わるストーリー） ---------- */
+.roadmap {
+  margin-top: 34px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+@media (min-width: 760px) {
+  .roadmap { grid-template-columns: repeat(4, 1fr); gap: 14px; }
+  .roadmap--3 { grid-template-columns: repeat(3, 1fr); }
+}
+.roadmap__step {
+  position: relative;
+  padding: 22px 20px;
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.025);
+}
+.section--white .roadmap__step,
+.section--ivory .roadmap__step {
+  border-color: rgba(200, 155, 60, 0.28);
+  background: rgba(200, 155, 60, 0.045);
+}
+@media (min-width: 760px) {
+  .roadmap__step:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: -14px;
+    width: 12px;
+    height: 1px;
+    background: rgba(212, 175, 55, 0.45);
+  }
+}
+.roadmap__num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-bottom: 12px;
+  font-family: var(--font-serif);
+  font-size: 14px;
+  font-weight: 700;
+  color: #201703;
+  background: linear-gradient(135deg, #f2d67a, var(--c-gold-deep));
+}
+.roadmap__title {
+  font-family: var(--font-serif);
+  font-size: 15.5px;
+  line-height: 1.6;
+  margin-bottom: 6px;
+  color: var(--c-text-on-dark);
+}
+.section--white .roadmap__title,
+.section--ivory .roadmap__title { color: var(--c-text-on-light); }
+.roadmap__text {
+  font-size: 12.5px;
+  line-height: 1.75;
+  color: var(--c-text-on-dark-sub);
+}
+.section--white .roadmap__text,
+.section--ivory .roadmap__text { color: var(--c-text-on-light-sub); }
+
+/* ---------- 中間CTAバナー ---------- */
+.cta-banner {
+  margin-top: 44px;
+  padding: 26px 24px;
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  border-radius: var(--radius);
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(212, 175, 55, 0.02));
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: stretch;
+  text-align: center;
+}
+.section--white .cta-banner,
+.section--ivory .cta-banner {
+  background: linear-gradient(135deg, rgba(200, 155, 60, 0.1), rgba(200, 155, 60, 0.02));
+  border-color: rgba(200, 155, 60, 0.4);
+}
+.cta-banner__text {
+  font-family: var(--font-serif);
+  font-size: 16px;
+  line-height: 1.7;
+}
+.cta-banner .btn { max-width: 420px; margin: 0 auto; }
+@media (min-width: 700px) {
+  .cta-banner { flex-direction: row; align-items: center; justify-content: space-between; text-align: left; gap: 24px; }
+  .cta-banner .btn { margin: 0; flex: none; }
+}
+
+/* ---------- アイコンカード（サポート／講師制度） ---------- */
+.icon-grid {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+@media (min-width: 640px) {
+  .icon-grid { grid-template-columns: repeat(2, 1fr); }
+}
+.icon-card {
+  padding: 22px 20px;
+  border: 1px solid rgba(212, 175, 55, 0.24);
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.025);
+}
+.section--white .icon-card,
+.section--ivory .icon-card {
+  border-color: rgba(200, 155, 60, 0.26);
+  background: rgba(200, 155, 60, 0.045);
+}
+.icon-card__icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--c-gold);
+  color: var(--c-gold);
+  margin-bottom: 14px;
+}
+.section--white .icon-card__icon,
+.section--ivory .icon-card__icon {
+  border-color: var(--c-gold-deep);
+  color: var(--c-gold-deep);
+}
+.icon-card__icon svg { width: 16px; height: 16px; }
+.icon-card__title {
+  font-family: var(--font-serif);
+  font-size: 15.5px;
+  margin-bottom: 8px;
+  color: var(--c-text-on-dark);
+}
+.section--white .icon-card__title,
+.section--ivory .icon-card__title { color: var(--c-text-on-light); }
+.icon-card__text {
+  font-size: 13px;
+  line-height: 1.8;
+  color: var(--c-text-on-dark-sub);
+}
+.section--white .icon-card__text,
+.section--ivory .icon-card__text { color: var(--c-text-on-light-sub); }
+
+/* ---------- 希少性バッジ ---------- */
+.badge-scarcity {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 10px 16px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.16), rgba(212, 175, 55, 0.04));
+  border: 1px solid rgba(212, 175, 55, 0.55);
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--c-gold-deep);
+  margin-bottom: 22px;
+}
+.section--black .badge-scarcity,
+.section--charcoal .badge-scarcity { color: var(--c-gold); }
+
+/* ---------- Amyの実績スタット ---------- */
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  margin: 24px 0 8px;
+}
+.stat-grid__item {
+  padding: 18px 12px;
+  border: 1px solid rgba(212, 175, 55, 0.28);
+  border-radius: var(--radius);
+  text-align: center;
+  background: rgba(255, 255, 255, 0.025);
+}
+.stat-grid__num {
+  display: block;
+  font-family: var(--font-serif);
+  font-size: clamp(24px, 6.6vw, 30px);
+  line-height: 1;
+  color: var(--c-gold);
+  margin-bottom: 8px;
+}
+.stat-grid__label {
+  font-size: 11px;
+  line-height: 1.5;
+  color: var(--c-text-on-dark-sub);
+  letter-spacing: 0.02em;
+}
+
+/* ---------- 資格取得後サポート：リキャップグリッド ---------- */
+.support-recap {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+@media (min-width: 700px) {
+  .support-recap { grid-template-columns: repeat(4, 1fr); }
+}
+.support-recap__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 9px;
+  padding: 18px 10px;
+  border: 1px solid rgba(212, 175, 55, 0.26);
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.025);
+  font-size: 12px;
+  line-height: 1.55;
+}
+.support-recap__item svg { width: 22px; height: 22px; color: var(--c-gold); flex: none; }
+
+/* ---------- 最終CTA：信頼リキャップ ---------- */
+.trust-recap {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0;
+  margin: 26px 0 8px;
+}
+.trust-recap__item {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 0 20px;
+  border-right: 1px solid rgba(212, 175, 55, 0.3);
+}
+.trust-recap__item:last-child { border-right: none; }
+.trust-recap__item b {
+  font-family: var(--font-serif);
+  font-size: clamp(18px, 5vw, 22px);
+  color: var(--c-gold);
+  line-height: 1;
+}
+.trust-recap__item span {
+  font-size: 10.5px;
+  color: var(--c-text-on-dark-sub);
+  letter-spacing: 0.02em;
 }
 
 /* ---------- スクロールインの控えめな演出 ---------- */
