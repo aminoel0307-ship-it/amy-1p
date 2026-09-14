@@ -11,7 +11,7 @@
 (function () {
   "use strict";
 
-  var LINE_MESSAGE = "Amy Salon Business Academyについて相談希望です。";
+  var LINE_MESSAGE = "無料セミナー";
 
   function copyText(text) {
     if (navigator.clipboard && navigator.clipboard.writeText) {
