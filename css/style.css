@@ -104,6 +104,18 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   box-shadow: 0 10px 24px rgba(198, 161, 91, 0.35);
 }
 
+.btn--outline-gold {
+  background: transparent;
+  color: var(--color-gold-deep);
+  border-color: rgba(143, 111, 54, 0.55);
+}
+.btn--outline-gold:hover,
+.btn--outline-gold:focus-visible {
+  background: rgba(198, 161, 91, 0.08);
+  transform: none;
+  box-shadow: none;
+}
+
 .btn--large {
   padding: 18px 40px;
   font-size: clamp(0.95rem, 1.6vw, 1.05rem);
@@ -174,6 +186,27 @@ main { padding-top: 56px; }
 }
 
 .section--narrow .section__inner { max-width: 720px; }
+
+.section--compact {
+  padding-top: calc(var(--section-pad-y) * 0.4);
+  padding-bottom: calc(var(--section-pad-y) * 0.4);
+}
+
+.mid-cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 20px;
+}
+
+.mid-cta__lead {
+  font-family: var(--font-serif);
+  font-size: clamp(1rem, 3.2vw, 1.2rem);
+  line-height: 1.8;
+  color: var(--color-gold-light);
+  margin: 0;
+}
 
 .section__eyebrow {
   font-family: var(--font-sans);
@@ -253,7 +286,7 @@ main { padding-top: 56px; }
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 120px var(--section-pad-x) 80px;
+  padding: 96px var(--section-pad-x) 64px;
   background:
     radial-gradient(ellipse at 50% -10%, rgba(198, 161, 91, 0.16), transparent 55%),
     linear-gradient(180deg, #0a0a0a 0%, #0a0a0a 100%);
@@ -285,46 +318,72 @@ main { padding-top: 56px; }
   display: contents;
 }
 
-.eyebrow,
+.hero__brand-badge,
 .hero__title,
+.hero__target,
 .hero__lead,
 .hero__brand {
   order: 1;
 }
-.hero__media { order: 2; }
-.hero__achievements { order: 3; }
 .hero__event { order: 4; }
 .hero__cta-group { order: 5; }
+.hero__media { order: 6; }
+.hero__achievements { order: 7; }
 
-.eyebrow {
-  font-size: 0.72rem;
-  letter-spacing: 0.28em;
-  color: var(--color-gold-light);
-  margin: 0 0 28px;
-  text-transform: uppercase;
+.hero__brand-badge {
+  margin: 0 0 18px;
+}
+
+.hero__brand-badge-name {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: clamp(1rem, 3.6vw, 1.3rem);
+  letter-spacing: 0.04em;
+  color: var(--color-white);
+  margin: 0 0 6px;
+}
+
+.hero__brand-badge-offer {
+  display: inline-block;
+  font-size: clamp(0.78rem, 2.6vw, 0.88rem);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--color-black);
+  background: linear-gradient(135deg, var(--color-gold-light) 0%, var(--color-gold) 100%);
+  padding: 5px 16px;
+  border-radius: 999px;
+  margin: 0;
 }
 
 .hero__title {
   font-family: var(--font-serif);
   font-weight: 700;
   font-size: clamp(1.6rem, 6vw, 2.5rem);
-  line-height: 1.65;
-  margin: 0 0 32px;
+  line-height: 1.5;
+  margin: 0 0 22px;
   color: var(--color-white);
 }
 
 .hero__title-accent {
   display: block;
-  margin-top: 20px;
+  margin-top: 14px;
   color: var(--color-gold-light);
   font-size: clamp(1.35rem, 5vw, 2.1rem);
 }
 
+.hero__target {
+  font-size: clamp(0.85rem, 2.2vw, 0.95rem);
+  line-height: 1.6;
+  color: var(--color-gold-light);
+  letter-spacing: 0.02em;
+  margin: 0 0 14px;
+}
+
 .hero__lead {
   font-size: clamp(0.95rem, 2.4vw, 1.1rem);
-  line-height: 2.1;
+  line-height: 1.85;
   color: rgba(246, 241, 231, 0.85);
-  margin: 0 0 28px;
+  margin: 0 0 20px;
 }
 
 .hero__brand {
@@ -444,6 +503,15 @@ main { padding-top: 56px; }
   align-items: center;
 }
 
+.hero__cta-meta {
+  margin: 0 0 12px;
+  font-size: 0.78rem;
+  line-height: 1.6;
+  letter-spacing: 0.01em;
+  color: rgba(246, 241, 231, 0.72);
+  text-align: center;
+}
+
 .hero__cta-note {
   margin: 14px 0 0;
   font-size: 0.76rem;
@@ -469,7 +537,7 @@ main { padding-top: 56px; }
   .hero__col--left { align-items: flex-start; text-align: left; }
   .hero__col--right { align-items: center; }
 
-  .eyebrow, .hero__title, .hero__lead, .hero__brand,
+  .hero__brand-badge, .hero__title, .hero__target, .hero__lead, .hero__brand,
   .hero__media, .hero__achievements, .hero__event, .hero__cta-group {
     order: initial;
   }
@@ -477,6 +545,7 @@ main { padding-top: 56px; }
   .hero__event { max-width: 460px; }
   .hero__event-date { justify-content: flex-start; }
   .hero__cta-group { align-items: flex-start; }
+  .hero__cta-meta { text-align: left; }
 
   .hero__media { max-width: 400px; }
   .hero__achievements { max-width: 380px; }
