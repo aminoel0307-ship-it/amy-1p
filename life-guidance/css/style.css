@@ -223,7 +223,9 @@ strong { font-weight: 500; }
   width: min(72%, 300px); margin: 0 auto;
 }
 .hero__photo img {
-  aspect-ratio: 4 / 5; object-fit: cover; object-position: center 18%;
+  aspect-ratio: 4 / 5; object-fit: cover;
+  /* Life Guidance専用写真（横長）：顔と手のジェスチャーが収まる位置でトリミング */
+  object-position: 58% center;
   width: 100%; border-radius: 160px 160px 4px 4px;
   border: 1px solid rgba(205,179,133,0.6);
   padding: 6px; background: rgba(205,179,133,0.08);
@@ -768,3 +770,10 @@ h1, h2, h3,
 .route__main { line-height: 1.5; }
 .plan__consult { display: flex; align-items: center; justify-content: center; min-height: 44px; margin-top: 10px; }
 .plan__product { font-variant-numeric: lining-nums; font-feature-settings: "lnum" 1; }
+/* 小さい画面でヘッダーの相談ボタンを1行に収める */
+.site-header .btn--sm { white-space: nowrap; }
+@media (max-width: 360px) {
+  .site-header__inner { gap: 8px; }
+  .site-header .btn--sm { font-size: 0.72rem; padding: 8px 12px; letter-spacing: 0.02em; }
+  .logo__sub { letter-spacing: 0.22em; white-space: nowrap; }
+}
