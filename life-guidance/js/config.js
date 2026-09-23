@@ -7,6 +7,16 @@
  *
  * keywords … 各ボタンをタップしたときにコピーされる、LINEへ送る定型文です。
  */
+/*
+ * 決済（Square）のURLは index.html の各「申込み・入会」ボタン（.js-pay）に直接設定しています。
+ *   Life Guidance 60（60分／22,000円）       https://square.link/u/Ikum4wZc
+ *   Deep Guidance 90（90分／33,000円）       https://square.link/u/ypL9axxv
+ *   Premium Guidance 120（120分／55,000円）  https://square.link/u/OMnnD2gx
+ *   Members Light（月額3,300円）             https://square.link/u/Yx7LB1M8
+ *   Members Standard（月額11,000円）         https://square.link/u/Y1o3yv5F
+ *   Members VIP（月額55,000円）              https://square.link/u/srHFvndy
+ * 下の lineUrl は「〜について相談する」ボタン（.js-cta）専用です。決済URLと混同しないでください。
+ */
 window.SITE_CONFIG = {
   // 公式LINE（申込み窓口）
   lineUrl: "https://lin.ee/BTJRVTk",

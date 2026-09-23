@@ -712,3 +712,59 @@ h1, h2, h3,
 @media (max-width: 360px) { .plan--featured .plan__badge { font-size: 0.86rem; padding: 5px 20px; letter-spacing: 0.12em; } }
 
 .plan__note { display: block; font-size: 0.74rem; font-weight: 400; color: var(--gold); line-height: 1.6; }
+
+/* ---------- 決済ボタン（Square）と相談ボタン（公式LINE）の役割分担 ---------- */
+.plan__product {
+  font-family: var(--font-en); font-style: italic; font-size: 0.95rem; letter-spacing: 0.1em;
+  color: var(--gold-deep); line-height: 1.4; margin-bottom: 6px;
+}
+.plan--dark .plan__product, .plan--featured .plan__product { color: var(--gold); }
+.plans--session .plan { display: flex; flex-direction: column; }
+.plans--session .plan .btn { margin-top: 22px; }
+@media (min-width: 768px) { .plans--session .plan .btn { margin-top: auto; } .plans--session .plan__desc { margin-bottom: 22px; } }
+
+.plan__consult {
+  display: block; margin-top: 14px; padding: 6px 0;
+  font-size: 0.78rem; color: var(--navy-800);
+  text-decoration: underline; text-underline-offset: 4px; text-decoration-color: var(--gold-deep);
+}
+
+.consult-lead { font-size: 0.84rem; color: rgba(248,244,236,0.78); text-align: center; }
+.consult-lead--dark { color: var(--ink-soft); }
+.consult-row { margin: 28px auto 0; max-width: 720px; display: grid; gap: 12px; }
+.consult-row .consult-lead { margin-bottom: 2px; }
+@media (min-width: 768px) {
+  .consult-row { grid-template-columns: 1fr 1fr; }
+  .consult-row .consult-lead { grid-column: 1 / -1; }
+}
+.mid-cta .cta-stack .btn--outline-light { color: var(--gold-light); }
+
+/* お申込みの流れ（単発鑑定／月額会員） */
+.flow-group { margin: 40px auto 0; max-width: 720px; }
+.flow-group__title {
+  display: inline-block; padding: 4px 18px; border-radius: 999px;
+  background: var(--navy-900); color: var(--gold-light);
+  font-family: var(--font-serif); font-size: 0.95rem; font-weight: 600; letter-spacing: 0.1em;
+}
+.flow-group .flow { margin-top: 12px; }
+.flow-consult {
+  margin: 36px auto 0; max-width: 720px; padding: 20px 18px;
+  background: var(--white); border: 1px solid var(--line); font-size: 0.86rem; color: var(--ink-soft);
+}
+.flow-consult strong { color: var(--navy-900); }
+
+/* 最終CTA：申込み → 相談 */
+.final-cta__divider {
+  margin: 36px auto 0; max-width: 480px; display: flex; align-items: center; gap: 12px;
+  font-size: 0.8rem; color: var(--gold-light); letter-spacing: 0.06em;
+}
+.final-cta__divider::before, .final-cta__divider::after { content: ""; flex: 1; height: 1px; background: rgba(205,179,133,0.4); }
+.final-cta__consult { margin: 16px auto 0; max-width: 480px; display: grid; gap: 10px; }
+@media (min-width: 960px) {
+  .final-cta__buttons { max-width: 720px; grid-template-columns: 1fr 1fr; }
+  .final-cta__consult { max-width: 1000px; grid-template-columns: repeat(3, 1fr); }
+  .final-cta__divider { max-width: 720px; }
+}
+.route__main { line-height: 1.5; }
+.plan__consult { display: flex; align-items: center; justify-content: center; min-height: 44px; margin-top: 10px; }
+.plan__product { font-variant-numeric: lining-nums; font-feature-settings: "lnum" 1; }
