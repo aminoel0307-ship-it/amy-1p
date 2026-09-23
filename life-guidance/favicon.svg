@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Amy Life Guidance">
+  <rect width="64" height="64" fill="#101b2e"/>
+  <circle cx="32" cy="32" r="24" fill="none" stroke="#cdb385" stroke-width="1.5"/>
+  <text x="32" y="41" font-family="Georgia, 'Times New Roman', serif" font-size="26" fill="#ecdcb9" text-anchor="middle">A</text>
+</svg>
