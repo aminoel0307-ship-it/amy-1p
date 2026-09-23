@@ -9,7 +9,8 @@
  */
 window.SITE_CONFIG = {
   // 公式LINE（申込み窓口）
-  lineUrl: "https://lin.ee/FCeqwRp",
+  lineUrl: "https://lin.ee/BTJRVTk",
+  // 公式LINE名称：Amy Life Guidance｜人生鑑定・個別相談
 
   keywords: {
     session: "鑑定希望",
