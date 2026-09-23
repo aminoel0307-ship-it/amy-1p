@@ -109,4 +109,5 @@ LINEのURLやキーワードを変える場合は `life-guidance/js/config.js` �
 - `config.js` の `lineUrl`（現在はAcademyと同じ公式LINE。Life Guidance専用アカウントがある場合は差し替え）
 - 月額会員の各プラン内容（セッション回数・LINE相談回数など）
 - 特定商取引法に基づく表記：販売事業者名、支払方法、キャンセル規定、解約期限（次回決済日の7日前）
-- `canonical` / `og:url` / `og:image` の `https://example.com/` を本番ドメインに変更
+- 本番ドメイン確定後、`<head>` に `canonical` / `og:url` / `og:image`（Life Guidance用のOGP画像）を追加（現在は誤ったURLを出さないよう未設定）
+- 「一番人気」表記は、実際の申込み実績など根拠を持てる状態で掲載してください（景品表示法の観点）
