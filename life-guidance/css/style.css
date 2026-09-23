@@ -224,8 +224,8 @@ strong { font-weight: 500; }
 }
 .hero__photo img {
   aspect-ratio: 4 / 5; object-fit: cover;
-  /* Life Guidance専用写真（横長）：顔と手のジェスチャーが収まる位置でトリミング */
-  object-position: 58% center;
+  /* Life Guidance専用写真（縦長）：頭を切らず、顔と上半身が自然に収まる位置でトリミング */
+  object-position: 50% 50%;
   width: 100%; border-radius: 160px 160px 4px 4px;
   border: 1px solid rgba(205,179,133,0.6);
   padding: 6px; background: rgba(205,179,133,0.08);
