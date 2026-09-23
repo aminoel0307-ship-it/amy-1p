@@ -74,3 +74,39 @@ window.SITE_CONFIG = {
 - 講師写真はゴールドの二重ラインフレームで囲んだ縦長ポートレート表示にし、ブランドトーンに馴染ませています
 - スマートフォン表示を基準に設計し、768px以上でレイアウトを拡張
 - FAQは `<details>/<summary>` を使用し、JS不要でアクセシブルに実装
+
+---
+
+# Amy Life Guidance — ランディングページ（`life-guidance/`）
+
+単発鑑定・月額会員サービスの申込み獲得用LPです。Academy LP（ルートの `index.html`）とは独立しています。
+公開URLは `https://<ドメイン>/life-guidance/` になります。
+
+```
+life-guidance/index.html     … LP本体（FV〜特商法表記まで全13セクション）
+life-guidance/css/style.css  … ネイビー×シャンパンゴールド×アイボリー、モバイルファースト
+life-guidance/js/config.js   … 公式LINEのURLと、各導線でコピーされるキーワード
+life-guidance/js/main.js     … CTAリンク反映、キーワード自動コピー、スマホ固定CTA
+life-guidance/favicon.svg    … ファビコン
+```
+
+写真はリポジトリ直下の `amy-profile.jpg` を共用しています。
+
+## 申込み導線（3種類）
+
+すべてのCTAは公式LINEを開き、ボタンに応じたキーワードを自動でクリップボードにコピーします。
+
+| data-route | コピーされる文言 | 用途 |
+|---|---|---|
+| `session` | 鑑定希望 | 単発鑑定（60分/90分/120分） |
+| `member` | 会員希望 | 月額会員 Light / Standard |
+| `vip` | VIP希望 | 月額会員 VIP（少人数限定） |
+
+LINEのURLやキーワードを変える場合は `life-guidance/js/config.js` だけを書き換えてください。
+
+## 公開前に確認いただきたい項目
+
+- `config.js` の `lineUrl`（現在はAcademyと同じ公式LINE。Life Guidance専用アカウントがある場合は差し替え）
+- 月額会員の各プラン内容（セッション回数・LINE相談回数など）
+- 特定商取引法に基づく表記：販売事業者名、支払方法、キャンセル規定、解約期限（次回決済日の7日前）
+- `canonical` / `og:url` / `og:image` の `https://example.com/` を本番ドメインに変更
