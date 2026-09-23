@@ -710,3 +710,5 @@ h1, h2, h3,
 
 .plan__badge { white-space: nowrap; }
 @media (max-width: 360px) { .plan--featured .plan__badge { font-size: 0.86rem; padding: 5px 20px; letter-spacing: 0.12em; } }
+
+.plan__note { display: block; font-size: 0.74rem; font-weight: 400; color: var(--gold); line-height: 1.6; }

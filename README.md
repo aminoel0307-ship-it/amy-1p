@@ -108,5 +108,6 @@ LINEのURLやキーワードを変える場合は `life-guidance/js/config.js` �
 
 - 申込み窓口：Amy Life Guidance専用公式LINE「Amy Life Guidance｜人生鑑定・個別相談」（`https://lin.ee/BTJRVTk`、`config.js` で一元管理）
 - 特定商取引法に基づく表記の販売事業者名・代表者名・所在地・電話番号を、登記簿（履歴事項全部証明書）と照合
-- 本番ドメイン確定後、`<head>` に `canonical` / `og:url` / `og:image`（Life Guidance用のOGP画像）を追加（現在は誤ったURLを出さないよう未設定）
+- 【保留】正式ドメイン確定後、`<head>` に `canonical` / `og:url` / `og:image`（SNSシェア用画像）を追加
+- 支払方法：単発鑑定・月額会員ともクレジットカード決済（月額会員は毎月自動決済）
 - Standardは「おすすめプラン」表記（「一番人気」は実績の根拠が必要なため不使用）
