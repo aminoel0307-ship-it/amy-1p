@@ -442,6 +442,19 @@ strong { font-weight: 500; }
   color: var(--navy-950); font-size: 0.82rem; font-weight: 700; letter-spacing: 0.18em;
   box-shadow: 0 6px 16px -8px rgba(179,149,97,.9);
 }
+.plan--featured {
+  outline: 1px solid rgba(205,179,133,0.55);
+  outline-offset: 5px;
+  box-shadow: 0 0 0 1px var(--gold), 0 28px 56px -24px rgba(179,149,97,0.75);
+}
+.plan--featured .plan__badge { font-size: 0.9rem; padding: 5px 26px; }
+.plan--featured .plan__price { color: var(--gold-light); }
+.plans__note strong { color: var(--navy-900); font-weight: 700; }
+.keywords { margin-top: 10px; display: grid; gap: 6px; }
+.keywords > div { display: grid; grid-template-columns: 88px 1fr; align-items: center; gap: 10px; font-size: 0.82rem; }
+.keywords dt { text-align: center; padding: 3px 0; border-radius: 999px; background: var(--navy-900); color: var(--gold-light); font-weight: 500; letter-spacing: 0.08em; }
+.keywords dd { color: var(--ink-soft); }
+.legal strong { color: var(--navy-900); font-weight: 700; }
 .plan__badge--vip { background: var(--navy-950); color: var(--gold-light); border: 1px solid var(--gold); box-shadow: none; }
 .plans__note { margin: 24px auto 0; max-width: 720px; text-align: center; font-size: 0.76rem; color: var(--ink-soft); }
 
@@ -644,4 +657,10 @@ h1, h2, h3,
   .fixed-cta__btn { font-size: 0.82rem; }
   .profile__stats strong { font-size: 1.22rem; }
   .profile__stats small { font-size: 0.56rem; }
+}
+
+/* 料金・数字は読みやすい等高数字で表示（Cormorant Garamondの既定はオールドスタイル数字） */
+.plan__price, .plan__time, .profile__stats strong, .theme__no, .flow__num, .method__label {
+  font-variant-numeric: lining-nums;
+  font-feature-settings: "lnum" 1;
 }
