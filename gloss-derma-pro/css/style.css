@@ -476,10 +476,51 @@ a { color: inherit; }
 .buy-card .price { margin-bottom: 20px; }
 .after-buy {
   margin-top: 12px;
-  padding: 12px 14px;
+  padding: 14px 14px 12px;
   background: var(--black);
   border: 1px solid var(--gold);
   text-align: center;
+}
+.after-buy__flow {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0;
+  margin-bottom: 10px;
+}
+.after-buy__flow li {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--white);
+  white-space: nowrap;
+}
+.after-buy__flow li + li::before {
+  content: "";
+  position: absolute;
+  top: 11px;
+  left: calc(-50% + 16px);
+  right: calc(50% + 16px);
+  height: 1px;
+  background: var(--gold);
+}
+.after-buy__num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--gold);
+  color: var(--black);
+  font-family: var(--font-en);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1;
 }
 .after-buy__text {
   font-size: 13px;
@@ -488,23 +529,32 @@ a { color: inherit; }
   word-break: keep-all;
   overflow-wrap: anywhere;
 }
-.after-buy__keyword { color: var(--gold-light); font-weight: 700; white-space: nowrap; }
 .after-buy__link {
-  display: inline-flex;
+  display: flex;
   align-items: center;
-  gap: 6px;
-  min-height: 40px;
-  margin-top: 8px;
-  padding: 6px 18px;
-  border: 1px solid var(--gold);
-  color: var(--gold-light);
-  font-size: 13px;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  min-height: 48px;
+  margin-top: 10px;
+  padding: 10px 16px;
+  background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold) 55%, var(--gold-deep) 100%);
+  color: var(--black);
+  font-size: 15px;
   font-weight: 700;
   letter-spacing: 0.06em;
   text-decoration: none;
-  transition: background .2s ease;
+  transition: box-shadow .2s ease;
 }
-.after-buy__link:hover { background: rgba(201, 164, 92, 0.15); }
+.after-buy__link:hover { box-shadow: 0 6px 18px rgba(201, 164, 92, 0.4); }
+.after-buy__hint {
+  margin-top: 8px;
+  font-size: 11px;
+  line-height: 1.6;
+  color: var(--gold-light);
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
 
 /* ---------- Recommend ---------- */
 .check-list { display: grid; gap: 10px; }
