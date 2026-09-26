@@ -833,3 +833,16 @@ h1, h2, h3,
 }
 .stone__note { margin: 28px auto 0; max-width: 640px; text-align: center; font-size: 0.86rem; color: var(--navy-800); }
 .stone__small { margin: 10px auto 0; max-width: 640px; text-align: center; font-size: 0.74rem; color: var(--ink-soft); line-height: 1.8; }
+
+/* ---------- スマホ調整：固定CTAの高さを約23％縮小（69px → 53px） ---------- */
+@media (max-width: 899px) {
+  .fixed-cta { padding: 6px 10px calc(6px + env(safe-area-inset-bottom)); gap: 6px; }
+  .fixed-cta__btn { min-height: 40px; padding: 2px 4px; border-radius: 9px; font-size: 0.84rem; line-height: 1.2; }
+  .fixed-cta__btn small { font-size: 0.6rem; line-height: 1.2; }
+  /* ページ末尾（特商法・フッター）が固定CTAに隠れないよう余白を確保 */
+  .site-footer { padding-bottom: calc(96px + env(safe-area-inset-bottom)); }
+}
+@media (max-width: 360px) { .fixed-cta__btn { font-size: 0.78rem; } }
+
+/* プロフィール写真：Life Guidance専用写真（縦長）を顔と上半身中心でトリミング */
+.profile__photo img[src*="amy-guidance-portrait"] { object-position: center 42%; }
