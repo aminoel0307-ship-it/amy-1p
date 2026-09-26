@@ -17,8 +17,8 @@ gloss-derma-pro/
 | 項目 | ボタン | 現在値 |
 |---|---|---|
 | `purchaseUrl` | 今すぐ購入する／GLOSS-DERMA™ PROを購入する | https://square.link/u/SeOvSrRY |
-| `facialCourseUrl` | フェイシャル開業コースを相談する | https://lin.ee/FCeqwRp（公式LINE） |
-| `scalpCourseUrl` | 頭皮ケア導入コースを相談する | https://lin.ee/FCeqwRp（公式LINE） |
+| `facialCourseUrl` | フェイシャル開業コースを相談する | https://lin.ee/C0byPWO（公式LINE） |
+| `scalpCourseUrl` | 頭皮ケア導入コースを相談する | https://lin.ee/C0byPWO（公式LINE） |
 
 コース相談URLを変更する場合は `js/config.js` を書き換えると、ページ内の該当ボタンすべてに反映されます。
 
