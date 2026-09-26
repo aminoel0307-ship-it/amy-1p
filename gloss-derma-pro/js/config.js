@@ -9,17 +9,16 @@
  * ■ コース相談リンク（LINE または 申込み・決済URL）
  *   facialCourseUrl … 「フェイシャル開業コースを相談する」ボタン（data-course="facial"）
  *   scalpCourseUrl  … 「頭皮ケア導入コースを相談する」ボタン（data-course="scalp"）
- *   公式LINE（https://lin.ee/xxxx）や Square 等の申込みURLを "" の中に入れるだけで、
- *   ページ内の該当ボタンすべてに反映されます（新しいタブで開きます）。
- *   未設定（""）の間は、ボタンの下に「相談窓口は準備中」の案内が表示されます。
+ *   現在は公式LINE（https://lin.ee/FCeqwRp）に接続しています。index.html にも同じURLを直接記載済みです。
+ *   申込み・決済URLなどに変える場合は、ここを書き換えるとページ内の該当ボタンすべてに反映されます。
  */
 window.GD_CONFIG = {
   // GLOSS-DERMA™ PRO 本体（55,000円・税込）
   purchaseUrl: "https://square.link/u/SeOvSrRY",
 
   // フェイシャルサロン開業コース（合計275,000円・税込）の相談・申込み先
-  facialCourseUrl: "",
+  facialCourseUrl: "https://lin.ee/FCeqwRp",
 
   // 頭皮ケア導入コース（合計132,000円・税込）の相談・申込み先
-  scalpCourseUrl: ""
+  scalpCourseUrl: "https://lin.ee/FCeqwRp"
 };

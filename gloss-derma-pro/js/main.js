@@ -27,15 +27,10 @@
     };
     Object.keys(courseUrls).forEach(function (key) {
       var url = courseUrls[key];
-      var ready = isExternal(url);
+      if (!isExternal(url)) return;
       document.querySelectorAll('.js-course[data-course="' + key + '"]').forEach(function (link) {
-        if (ready) {
-          link.setAttribute("href", url);
-          openInNewTab(link);
-        }
-      });
-      document.querySelectorAll('.js-course-note[data-course="' + key + '"]').forEach(function (note) {
-        note.hidden = ready;
+        link.setAttribute("href", url);
+        openInNewTab(link);
       });
     });
 
