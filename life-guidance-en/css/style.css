@@ -869,3 +869,35 @@ h1, h2, h3,
 .lang-en .btn__sub, .lang-en .hero__tags li, .lang-en .hero__note, .lang-en .plan__price span,
 .lang-en .profile__stats span, .lang-en .plan-common, .lang-en .consult-lead { letter-spacing: 0.01em; }
 .lang-en .profile__stats span { font-size: 0.66rem; line-height: 1.35; }
+
+/* ---------- 今後のサービス：オーダーメイド・パワーストーン（準備中） ---------- */
+.stone { position: relative; overflow: hidden; }
+.stone::before {
+  content: ""; position: absolute; left: 50%; top: 0; transform: translateX(-50%);
+  width: 1px; height: 48px; background: linear-gradient(180deg, transparent, var(--gold-deep));
+}
+.stone__badge {
+  display: table; margin: 0 auto 14px; padding: 3px 16px; border-radius: 999px;
+  border: 1px solid var(--gold-deep); color: var(--gold-deep);
+  font-size: 0.74rem; letter-spacing: 0.12em;
+}
+.stone-steps { margin: 36px auto 0; max-width: 720px; display: grid; gap: 12px; counter-reset: none; }
+.stone-steps li {
+  display: grid; grid-template-columns: 52px 1fr; grid-template-rows: auto auto; column-gap: 14px; align-items: center;
+  padding: 16px 18px; background: var(--white); border: 1px solid var(--line);
+}
+.stone-steps__num {
+  grid-row: 1 / span 2; width: 52px; height: 52px; border-radius: 50%;
+  display: grid; place-items: center; background: var(--navy-900); color: var(--gold-light);
+  font-family: var(--font-en); font-size: 1.2rem; font-weight: 600;
+  font-variant-numeric: lining-nums; font-feature-settings: "lnum" 1;
+}
+.stone-steps h3 { font-family: var(--font-serif); font-size: 1.1rem; font-weight: 600; color: var(--navy-900); letter-spacing: 0.08em; line-height: 1.5; }
+.stone-steps p { font-size: 0.84rem; color: var(--ink-soft); line-height: 1.6; }
+@media (min-width: 768px) {
+  .stone-steps { grid-template-columns: repeat(3, 1fr); }
+  .stone-steps li { grid-template-columns: 1fr; text-align: center; justify-items: center; row-gap: 6px; padding: 24px 18px; }
+  .stone-steps__num { grid-row: auto; }
+}
+.stone__note { margin: 28px auto 0; max-width: 640px; text-align: center; font-size: 0.86rem; color: var(--navy-800); }
+.stone__small { margin: 10px auto 0; max-width: 640px; text-align: center; font-size: 0.74rem; color: var(--ink-soft); line-height: 1.8; }
