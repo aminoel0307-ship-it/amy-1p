@@ -801,3 +801,71 @@ h1, h2, h3,
   text-decoration: underline; text-underline-offset: 4px; text-decoration-color: rgba(205,179,133,0.5);
 }
 @media (min-width: 900px) { .en-inquiry { grid-column: 1 / -1; text-align: left; padding-left: 0; padding-right: 0; } .btn--en { margin-left: 0; } }
+
+/* ==========================================================================
+   English page overrides (life-guidance-en only)
+   ========================================================================== */
+.lang-en {
+  --font-serif: 'Cormorant Garamond', 'Shippori Mincho', 'Times New Roman', serif;
+  --font-sans: 'Noto Sans', 'Helvetica Neue', Arial, 'Noto Sans JP', sans-serif;
+  font-family: var(--font-sans);
+  line-height: 1.75;
+  letter-spacing: 0.01em;
+  word-break: normal;
+  overflow-wrap: break-word;
+  hyphens: manual;
+}
+.lang-en p, .lang-en li, .lang-en dd { word-break: normal; }
+.lang-en .hero__title { font-size: clamp(1.7rem, 7.6vw, 2.9rem); line-height: 1.3; letter-spacing: 0.01em; font-weight: 600; }
+.lang-en .hero__title-accent { margin-top: 10px; }
+.lang-en .hero__lead { font-size: 0.95rem; line-height: 1.8; }
+.lang-en .section__title { font-size: clamp(1.75rem, 7vw, 2.5rem); line-height: 1.3; letter-spacing: 0.01em; }
+.lang-en .final-cta__title { font-size: clamp(1.8rem, 7.4vw, 2.6rem); line-height: 1.3; letter-spacing: 0.01em; }
+.lang-en .mid-cta__lead { font-size: clamp(1.45rem, 6vw, 2rem); letter-spacing: 0.02em; }
+.lang-en .promise-title { font-size: 1.5rem; letter-spacing: 0.04em; }
+.lang-en .promise strong { font-size: 1.35rem; letter-spacing: 0.04em; }
+.lang-en .theme__name { font-size: 1.7rem; letter-spacing: 0.04em; }
+.lang-en .method__step h3 { font-size: 1.6rem; letter-spacing: 0.04em; }
+.lang-en .persona__card h3, .lang-en .flow h3 { font-size: 1.2rem; letter-spacing: 0.02em; }
+.lang-en .plan__for { font-size: 1.15rem; letter-spacing: 0.01em; }
+.lang-en .plan__price span { margin-left: 6px; }
+.lang-en .profile__name { font-size: 2rem; letter-spacing: 0.04em; }
+.lang-en .profile__message { font-size: 1.2rem; line-height: 1.7; }
+.lang-en .worry-answer { font-size: 1.15rem; line-height: 1.7; }
+.lang-en .worry-answer__strong { font-size: 1.25rem; }
+.lang-en .compare__row span { font-size: 0.84rem; }
+.lang-en .btn { letter-spacing: 0.03em; }
+.lang-en .btn__main { font-weight: 500; }
+.lang-en .keywords > div, .lang-en .flow-consult { font-size: 0.86rem; }
+.lang-en .legal__title small { font-size: 0.8rem; font-weight: 500; color: var(--ink-soft); }
+.lang-en .legal__text a { text-decoration: underline; text-underline-offset: 3px; }
+.lang-en .fixed-cta__btn { font-size: 0.8rem; letter-spacing: 0.02em; text-align: center; }
+
+/* Header: language switch + inquiry */
+.header-actions { display: flex; align-items: center; gap: 10px; }
+.lang-switch {
+  display: inline-flex; align-items: center; min-height: 40px; padding: 0 4px;
+  font-size: 0.78rem; color: var(--gold-light); letter-spacing: 0.08em;
+  text-decoration: underline; text-underline-offset: 4px; text-decoration-color: rgba(205,179,133,0.5);
+}
+@media (max-width: 360px) { .header-actions { gap: 6px; } .lang-switch { font-size: 0.72rem; } }
+
+/* English inquiry box */
+.en-box {
+  padding: 44px var(--pad-x);
+  background: linear-gradient(135deg, var(--navy-800) 0%, var(--navy-950) 100%);
+  border-top: 1px solid rgba(205,179,133,0.28);
+  text-align: center; color: var(--ivory);
+}
+.en-box .section__inner { max-width: 520px; display: grid; gap: 12px; justify-items: center; }
+.en-box__label { font-family: var(--font-en); font-style: italic; font-size: 1.5rem; color: var(--gold-light); line-height: 1.3; }
+.en-box__text { font-size: 0.9rem; color: rgba(248,244,236,0.82); }
+.en-box__text strong { color: var(--gold-light); font-weight: 500; }
+.en-box .btn { margin-top: 6px; }
+
+.final-cta__consult--en { max-width: 480px; }
+@media (min-width: 960px) { .final-cta__consult--en { max-width: 720px; grid-template-columns: 1fr 1fr; } }
+
+.lang-en .btn__sub, .lang-en .hero__tags li, .lang-en .hero__note, .lang-en .plan__price span,
+.lang-en .profile__stats span, .lang-en .plan-common, .lang-en .consult-lead { letter-spacing: 0.01em; }
+.lang-en .profile__stats span { font-size: 0.66rem; line-height: 1.35; }
