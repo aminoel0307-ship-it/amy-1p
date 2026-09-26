@@ -1024,6 +1024,15 @@ a { color: inherit; }
   .final-card .price__num { font-size: 56px; }
 }
 
+/* 幅320px前後の小型端末（iPhone SE 第1世代・画面表示「拡大」設定など） */
+@media (max-width: 359px) {
+  :root { --pad-x: 16px; }
+  .logo { font-size: 16px; letter-spacing: 0.04em; }
+  .site-header .btn--sm { padding: 8px 10px; font-size: 12px; }
+  .sticky-bar__num { font-size: 18px; }
+  .sticky-bar .btn { padding: 8px 12px; font-size: 13px; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .btn, .sticky-bar { transition: none; }
