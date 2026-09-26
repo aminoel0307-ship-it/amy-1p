@@ -135,3 +135,30 @@ LINEのURLやキーワードを変える場合は `life-guidance/js/config.js` �
 - 相談ボタン：公式LINE `https://lin.ee/BTJRVTk`。タップ時に「English Session」をコピー（`js/config.js`）
 - 特商法の英訳を掲載し、日本語版の表記を正とする旨を明記
 - 日本語版ファーストビューに「English sessions available / 英語でのご相談にも対応しています」と「English Inquiry」ボタン（キーワード「English Session」）を追加
+
+---
+
+# Amy Life Guidance — 将来拡張の設計メモ（パワーストーン・オーダーメイド）
+
+現時点では **EC機能・注文システム・会員機能は実装していません**。LP上には「今後のサービス（準備中）」として
+`#custom-stone` セクションのみを掲載しています（日本語版・英語版とも。購入ボタン・フォームなし）。
+
+## 将来の導線イメージ
+
+毎日の運勢 → 詳しい個別鑑定 → 悩み・テーマに合うパワーストーン提案 → Amyによるオーダーメイド制作 → 購入・発送
+
+## 追加しやすくするための方針（既存LPを壊さないこと）
+
+- **ページは追加方式**：既存の `life-guidance/`（日本語）・`life-guidance-en/`（英語）は変更を最小限にし、
+  新機能は別ディレクトリで追加する
+  - 例：`life-guidance/stones/`（石の意味・特徴一覧）、`life-guidance/custom/`（制作依頼・注文フォーム）、
+    `life-guidance/gallery/`（制作実例）。英語版は `life-guidance-en/` 配下に同じ構成で並べる
+- **LPからの入口**：`#custom-stone` セクション（`data-feature="custom-stone" data-status="coming-soon"`）に
+  リンク・ボタンを追加して各ページへつなぐ
+- **データはコンテンツと分離**：石の名前・意味・特徴・画像・価格・送料は、将来 `data/stones.json` 等にまとめ、
+  日本語/英語は同じIDで `name_ja` / `name_en` のように持つ（表示ページは共通テンプレートで生成）
+- **決済**：現行どおり Square を想定（商品ごとの決済リンク、または Square のオンラインストア／API）。
+  決済URLはボタン（`.js-pay`）に直接設定し、相談導線（公式LINE `.js-cta`）と混同しない
+- **注文内容管理・会員マイページ**：静的サイト（GitHub Pages）の範囲を超えるため、
+  Square の顧客・注文管理、または外部のフォーム／会員サービスとの連携で実装を検討する
+- **表現**：天然石の効果・効能を約束する表現は使わない（景品表示法・薬機法の観点）
