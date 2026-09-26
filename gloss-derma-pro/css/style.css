@@ -18,6 +18,8 @@
   --ink-soft: #4a4640;
 
   --font-en: 'Cormorant Garamond', 'Times New Roman', serif;
+  /* 数字用：「1」が英字の I に見えない明朝体（Cormorant は旧式数字で 1 が I に見えるため） */
+  --font-num: 'Shippori Mincho', 'Noto Serif JP', 'Hiragino Mincho ProN', 'Yu Mincho', serif;
   --font-serif: 'Shippori Mincho', 'Noto Serif JP', serif;
   --font-sans: 'Noto Sans JP', 'Hiragino Sans', 'Yu Gothic', sans-serif;
 
@@ -1096,6 +1098,7 @@ a { color: inherit; }
 
   .support-message { margin-top: 56px; font-size: 21px; }
   .profile { grid-template-columns: 320px minmax(0, 1fr); gap: 56px; align-items: start; }
+  .stats__num { font-size: clamp(24px, 3vw, 34px); }
   .stats__num small { font-size: 12px; }
   .stats__label { font-size: 13px; }
 
@@ -1140,13 +1143,47 @@ a { color: inherit; }
   .final-card .price__num { font-size: 56px; }
 }
 
+/* ---------- 価格・数字の書体（全幅共通） ---------- */
+.price__num,
+.choice-nav__price,
+.plan__price,
+.cta-block__lead strong,
+.stats__num,
+.step-list__num,
+.after-buy__num,
+.sticky-bar__num {
+  font-family: var(--font-num);
+  font-variant-numeric: lining-nums;
+  letter-spacing: 0;
+}
+
+/* ---------- スマホ：固定ヘッダー・下部購入バーを低く ---------- */
+@media (max-width: 767px) {
+  html { scroll-padding-top: 52px; }
+  .site-header__inner { padding-top: 6px; padding-bottom: 6px; }
+  .site-header .btn--sm { min-height: 34px; padding: 6px 12px; }
+  .logo { font-size: 18px; }
+
+  body { padding-bottom: 50px; }
+  .sticky-bar { padding: 4px var(--pad-x) calc(4px + env(safe-area-inset-bottom)); }
+  .sticky-bar__price { line-height: 1.1; }
+  .sticky-bar__name { font-size: 11px; }
+  .sticky-bar__num { font-size: 18px; }
+  .sticky-bar .btn { min-height: 32px; padding: 5px 14px; font-size: 13px; }
+
+  /* 数字書体が Cormorant より横幅があるため、価格が1行に収まるよう少し調整 */
+  .price__num { font-size: clamp(44px, 14vw, 56px); }
+  .plan__total .price__num { font-size: clamp(40px, 12vw, 60px); }
+  .plan-card__total .price__num { font-size: clamp(40px, 12.5vw, 50px); }
+}
+
 /* 幅320px前後の小型端末（iPhone SE 第1世代・画面表示「拡大」設定など） */
 @media (max-width: 359px) {
   :root { --pad-x: 16px; }
   .logo { font-size: 16px; letter-spacing: 0.04em; }
-  .site-header .btn--sm { padding: 8px 10px; font-size: 12px; }
-  .sticky-bar__num { font-size: 18px; }
-  .sticky-bar .btn { padding: 8px 12px; font-size: 13px; }
+  .site-header .btn--sm { padding: 6px 10px; font-size: 12px; }
+  .sticky-bar__num { font-size: 17px; }
+  .sticky-bar .btn { padding: 5px 12px; font-size: 13px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
