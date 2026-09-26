@@ -25,6 +25,7 @@ window.SITE_CONFIG = {
   keywords: {
     session: "鑑定希望",
     member: "会員希望",
-    vip: "VIP希望"
+    vip: "VIP希望",
+    english: "English Session"
   }
 };

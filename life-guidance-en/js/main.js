@@ -1,5 +1,5 @@
 /**
- * Amy Life Guidance — LP用スクリプト
+ * Amy Life Guidance (English) — page script
  *
  * 1. CTA（.js-cta）のリンク先を config.js の lineUrl で一括反映
  * 2. CTAタップ時に data-route に応じた定型文（鑑定希望／会員希望／VIP希望）を
@@ -64,14 +64,10 @@
         if (!word) return;
         copyText(word)
           .then(function () {
-            showToast(route === "english"
-              ? "\"" + word + "\" has been copied. Please paste and send it in LINE."
-              : "「" + word + "」をコピーしました。LINEのトークに貼り付けて送信してください");
+            showToast("\"" + word + "\" has been copied. Please paste and send it in LINE.");
           })
           .catch(function () {
-            showToast(route === "english"
-              ? "Please send \"" + word + "\" in LINE."
-              : "LINEのトークで「" + word + "」と送信してください");
+            showToast("Please send \"" + word + "\" in LINE.");
           });
       });
     });

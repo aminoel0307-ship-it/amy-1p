@@ -124,3 +124,14 @@ LINEのURLやキーワードを変える場合は `life-guidance/js/config.js` �
 - 【保留】正式ドメイン確定後、`<head>` に `canonical` / `og:url` / `og:image`（SNSシェア用画像）を追加
 - 支払方法：単発鑑定・月額会員ともクレジットカード決済（月額会員は毎月自動決済）
 - Standardは「おすすめプラン」表記（「一番人気」は実績の根拠が必要なため不使用）
+
+---
+
+# Amy Life Guidance — English page（`life-guidance-en/`）
+
+日本語版とは独立した英語版LPです（HTML・CSS・JS・画像はすべて `life-guidance-en/` 内に別ファイルとして保持）。
+
+- 決済ボタン（Square）：日本語版と同じ6つの決済URL（`index.html` の `.js-pay` に直接設定）
+- 相談ボタン：公式LINE `https://lin.ee/BTJRVTk`。タップ時に「English Session」をコピー（`js/config.js`）
+- 特商法の英訳を掲載し、日本語版の表記を正とする旨を明記
+- 日本語版ファーストビューに「English sessions available / 英語でのご相談にも対応しています」と「English Inquiry」ボタン（キーワード「English Session」）を追加
