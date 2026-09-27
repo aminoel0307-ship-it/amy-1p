@@ -901,3 +901,13 @@ h1, h2, h3,
 }
 .stone__note { margin: 28px auto 0; max-width: 640px; text-align: center; font-size: 0.86rem; color: var(--navy-800); }
 .stone__small { margin: 10px auto 0; max-width: 640px; text-align: center; font-size: 0.74rem; color: var(--ink-soft); line-height: 1.8; }
+
+/* ---------- Mobile: fixed CTA reduced ~23% (69px -> 53px), same as the Japanese page ---------- */
+@media (max-width: 899px) {
+  .fixed-cta { padding: 6px 10px calc(6px + env(safe-area-inset-bottom)); gap: 6px; }
+  .fixed-cta__btn { min-height: 40px; padding: 2px 4px; border-radius: 9px; font-size: 0.84rem; line-height: 1.2; }
+  .fixed-cta__btn small { font-size: 0.6rem; line-height: 1.2; }
+  /* Keep the end of the page (legal notice, footer) clear of the fixed CTA */
+  .site-footer { padding-bottom: calc(96px + env(safe-area-inset-bottom)); }
+}
+@media (max-width: 360px) { .fixed-cta__btn { font-size: 0.78rem; } }
