@@ -911,3 +911,11 @@ h1, h2, h3,
   .site-footer { padding-bottom: calc(96px + env(safe-area-inset-bottom)); }
 }
 @media (max-width: 360px) { .fixed-cta__btn { font-size: 0.78rem; } }
+
+/* Name with official kanji (Akemi Watanabe / 渡邊明美) */
+.lang-en .profile__name > .nb { display: inline-block; font-family: inherit; font-style: normal; font-size: inherit; font-weight: inherit; color: inherit; letter-spacing: inherit; }
+.lang-en .profile__name > .profile__name-ja { font-family: 'Shippori Mincho', serif; font-size: 0.8em; letter-spacing: 0.08em; }
+.lang-en .hero__photo .name-ja { font-family: 'Shippori Mincho', serif; letter-spacing: 0.08em; }
+.lang-en .legal .name-ja { font-family: 'Noto Sans JP', sans-serif; }
+@media (max-width: 360px) { .lang-en .hero__photo figcaption { font-size: 0.74rem; letter-spacing: 0.04em; padding: 2px 10px; } .lang-en .hero__photo .name-ja { letter-spacing: 0.02em; } }
+.lang-en .profile__name-ja span { display: inline; font-family: inherit; font-style: normal; font-size: inherit; font-weight: inherit; color: inherit; letter-spacing: inherit; }
