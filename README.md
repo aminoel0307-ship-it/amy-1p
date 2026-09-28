@@ -101,9 +101,9 @@ life-guidance/favicon.svg    … ファビコン
 | Life Guidance 60 | 60分／22,000円 | このプランを申し込む | https://square.link/u/Ikum4wZc |
 | Deep Guidance 90 | 90分／33,000円 | このプランを申し込む | https://square.link/u/ypL9axxv |
 | Premium Guidance 120 | 120分／55,000円 | このプランを申し込む | https://square.link/u/OMnnD2gx |
-| Amy Life Guidance Members Light | 月額3,300円 | Lightに入会する | https://square.link/u/Yx7LB1M8 |
-| Amy Life Guidance Members Standard | 月額11,000円 | Standardに入会する | https://square.link/u/Y1o3yv5F |
-| Amy Life Guidance Members VIP | 月額55,000円 | VIPに入会する | https://square.link/u/srHFvndy |
+| Amy Life Guidance Members Light | 月額3,300円 | Lightに入会する | https://square.link/u/ysMAxAVA |
+| Amy Life Guidance Members Standard | 月額11,000円 | Standardに入会する | https://square.link/u/pMvoYBPb |
+| Amy Life Guidance Members VIP | 月額55,000円 | VIPに入会する | https://square.link/u/FVosvHb8 |
 
 ## 相談導線（公式LINE・3種類）
 
