@@ -8,9 +8,9 @@
  *   Life Guidance 60     (60 min / ¥22,000)    https://square.link/u/Ikum4wZc
  *   Deep Guidance 90     (90 min / ¥33,000)    https://square.link/u/ypL9axxv
  *   Premium Guidance 120 (120 min / ¥55,000)   https://square.link/u/OMnnD2gx
- *   Members Light        (¥3,300 / month)      https://square.link/u/Yx7LB1M8
- *   Members Standard     (¥11,000 / month)     https://square.link/u/Y1o3yv5F
- *   Members VIP          (¥55,000 / month)     https://square.link/u/srHFvndy
+ *   Members Light        (¥3,300 / month)      https://square.link/u/ysMAxAVA
+ *   Members Standard     (¥11,000 / month)     https://square.link/u/pMvoYBPb
+ *   Members VIP          (¥55,000 / month)     https://square.link/u/FVosvHb8
  */
 window.SITE_CONFIG = {
   // Official LINE: Amy Life Guidance｜人生鑑定・個別相談

@@ -12,9 +12,9 @@
  *   Life Guidance 60（60分／22,000円）       https://square.link/u/Ikum4wZc
  *   Deep Guidance 90（90分／33,000円）       https://square.link/u/ypL9axxv
  *   Premium Guidance 120（120分／55,000円）  https://square.link/u/OMnnD2gx
- *   Members Light（月額3,300円）             https://square.link/u/Yx7LB1M8
- *   Members Standard（月額11,000円）         https://square.link/u/Y1o3yv5F
- *   Members VIP（月額55,000円）              https://square.link/u/srHFvndy
+ *   Members Light（月額3,300円）             https://square.link/u/ysMAxAVA
+ *   Members Standard（月額11,000円）         https://square.link/u/pMvoYBPb
+ *   Members VIP（月額55,000円）              https://square.link/u/FVosvHb8
  * 下の lineUrl は「〜について相談する」ボタン（.js-cta）専用です。決済URLと混同しないでください。
  */
 window.SITE_CONFIG = {
