@@ -1158,6 +1158,15 @@ main { padding-top: 56px; }
   margin-top: 48px;
 }
 
+.seminar-event__announce {
+  font-size: 0.82rem;
+  line-height: 1.7;
+  color: var(--color-gold-light);
+  margin: 0 0 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(198, 161, 91, 0.25);
+}
+
 .seminar-event__name {
   font-family: var(--font-serif);
   font-size: 1rem;
