@@ -1,0 +1,101 @@
+/**
+ * Amy Life Guidance (English) — page script
+ *
+ * 1. Sets every LINE button (.js-cta) to lineUrl from config.js
+ * 2. On tap, copies the keyword for the button's data-route ("English Session")
+ *    and shows a short notice (does not block opening LINE)
+ * 3. Shows the fixed mobile CTA bar after the first screen
+ * 4. Footer year
+ */
+(function () {
+  "use strict";
+
+  var config = window.SITE_CONFIG || {};
+  var lineUrl = config.lineUrl || "#";
+  var keywords = config.keywords || {};
+
+  function copyText(text) {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      return navigator.clipboard.writeText(text);
+    }
+    return new Promise(function (resolve, reject) {
+      try {
+        var ta = document.createElement("textarea");
+        ta.value = text;
+        ta.setAttribute("readonly", "");
+        ta.style.position = "fixed";
+        ta.style.top = "-1000px";
+        ta.style.opacity = "0";
+        document.body.appendChild(ta);
+        ta.select();
+        var ok = document.execCommand("copy");
+        document.body.removeChild(ta);
+        ok ? resolve() : reject(new Error("copy failed"));
+      } catch (e) {
+        reject(e);
+      }
+    });
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    var toast = document.querySelector(".toast");
+    var toastTimer = null;
+
+    function showToast(message) {
+      if (!toast) return;
+      toast.textContent = message;
+      toast.classList.add("is-visible");
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(function () {
+        toast.classList.remove("is-visible");
+      }, 3600);
+    }
+
+    // LINE links + keyword copy
+    document.querySelectorAll(".js-cta").forEach(function (link) {
+      link.setAttribute("href", lineUrl);
+      if (/^https?:\/\//.test(lineUrl)) {
+        link.setAttribute("target", "_blank");
+        link.setAttribute("rel", "noopener noreferrer");
+      }
+      link.addEventListener("click", function () {
+        var route = link.getAttribute("data-route");
+        var word = keywords[route];
+        if (!word) return;
+        copyText(word)
+          .then(function () {
+            showToast("\"" + word + "\" has been copied. Please paste and send it in LINE.");
+          })
+          .catch(function () {
+            showToast("Please send \"" + word + "\" in LINE.");
+          });
+      });
+    });
+
+    // Fixed mobile CTA: show after the first screen, hide near the final CTA
+    var bar = document.querySelector(".fixed-cta");
+    var hero = document.getElementById("top");
+    var finalCta = document.getElementById("apply");
+    if (bar && hero && "IntersectionObserver" in window) {
+      var heroVisible = true;
+      var finalVisible = false;
+      var update = function () {
+        var show = !heroVisible && !finalVisible;
+        bar.classList.toggle("is-visible", show);
+      };
+      new IntersectionObserver(function (entries) {
+        heroVisible = entries[0].isIntersecting;
+        update();
+      }).observe(hero);
+      if (finalCta) {
+        new IntersectionObserver(function (entries) {
+          finalVisible = entries[0].isIntersecting;
+          update();
+        }).observe(finalCta);
+      }
+    }
+
+    var yearEl = document.getElementById("js-year");
+    if (yearEl) yearEl.textContent = String(new Date().getFullYear());
+  });
+})();
