@@ -1,11 +1,11 @@
 /**
  * Amy Life Guidance (English) — page script
  *
- * 1. CTA（.js-cta）のリンク先を config.js の lineUrl で一括反映
- * 2. CTAタップ時に data-route に応じた定型文（鑑定希望／会員希望／VIP希望）を
- *    クリップボードへコピーし、トーストで案内（LINEへの遷移は妨げない）
- * 3. ファーストビューを過ぎたらスマホ下部の固定CTAを表示
- * 4. フッター年号
+ * 1. Sets every LINE button (.js-cta) to lineUrl from config.js
+ * 2. On tap, copies the keyword for the button's data-route ("English Session")
+ *    and shows a short notice (does not block opening LINE)
+ * 3. Shows the fixed mobile CTA bar after the first screen
+ * 4. Footer year
  */
 (function () {
   "use strict";
@@ -51,7 +51,7 @@
       }, 3600);
     }
 
-    // CTAリンク反映 + 定型文コピー
+    // LINE links + keyword copy
     document.querySelectorAll(".js-cta").forEach(function (link) {
       link.setAttribute("href", lineUrl);
       if (/^https?:\/\//.test(lineUrl)) {
@@ -72,7 +72,7 @@
       });
     });
 
-    // スマホ固定CTA：ファーストビュー通過後に表示、最終CTA付近では隠す
+    // Fixed mobile CTA: show after the first screen, hide near the final CTA
     var bar = document.querySelector(".fixed-cta");
     var hero = document.getElementById("top");
     var finalCta = document.getElementById("apply");

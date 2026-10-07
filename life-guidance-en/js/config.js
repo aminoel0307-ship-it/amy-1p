@@ -13,7 +13,7 @@
  *   Members VIP          (¥55,000 / month)     https://square.link/u/FVosvHb8
  */
 window.SITE_CONFIG = {
-  // Official LINE: Amy Life Guidance｜人生鑑定・個別相談
+  // Amy Life Guidance Official LINE
   lineUrl: "https://lin.ee/BTJRVTk",
 
   keywords: {
