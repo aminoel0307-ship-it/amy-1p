@@ -968,3 +968,26 @@ h1, h2, h3,
   .hero--cv .hero__lead { margin-top: 6px; font-size: 0.8rem; line-height: 1.75; }
   .hero__line { margin-top: 4px; }
 }
+
+/* ヘッダー：言語切替（切り替え先の言語を表示） */
+.header-actions { display: flex; align-items: center; gap: 10px; }
+.lang-switch {
+  display: inline-flex; align-items: center; min-height: 40px; padding: 0 4px;
+  font-family: var(--font-en); font-size: 0.9rem; color: var(--gold-light); letter-spacing: 0.04em;
+  text-decoration: underline; text-underline-offset: 4px; text-decoration-color: rgba(205,179,133,0.5);
+}
+@media (max-width: 360px) { .header-actions { gap: 6px; } .lang-switch { font-size: 0.8rem; } }
+/* 言語切替追加後もスマホでヘッダーを1行に収める */
+@media (max-width: 440px) {
+  .site-header__inner { gap: 8px; padding-left: 14px; padding-right: 14px; }
+  .site-header .logo__sub { letter-spacing: 0.2em; white-space: nowrap; }
+  .site-header .btn--sm { font-size: 0.74rem; padding: 8px 12px; letter-spacing: 0.02em; }
+  .header-actions { gap: 8px; }
+}
+@media (max-width: 360px) {
+  .site-header .logo__main { font-size: 1.3rem; }
+  .site-header .logo__sub { font-size: 0.56rem; letter-spacing: 0.16em; }
+  .site-header .btn--sm { font-size: 0.68rem; padding: 8px 9px; }
+  .lang-switch { font-size: 0.76rem; padding: 0 2px; }
+  .header-actions { gap: 6px; }
+}
