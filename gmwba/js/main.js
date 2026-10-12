@@ -3,7 +3,20 @@
 
   var config = window.GMWBA_CONFIG || {};
   var ctaUrl = config.ctaUrl || "#";
-  var lineMessage = config.lineMessage || "GMWBA";
+  var isEn = document.documentElement.lang === "en";
+  var defaultMessage = isEn ? "Contact" : config.defaultMessage || "お問い合わせ";
+
+  var TEXT = isEn
+    ? {
+        copied: function (m) { return "Copied “" + m + "”. Paste it into LINE and send."; },
+        copiedShort: "Copied. Open LINE and paste it.",
+        failed: "Could not copy. Please long-press the text above to copy it."
+      }
+    : {
+        copied: function (m) { return "「" + m + "」をコピーしました。LINEに貼り付けて送ってください"; },
+        copiedShort: "コピーしました。LINEを開いて貼り付けてください",
+        failed: "コピーできませんでした。上の文字を長押しでコピーしてください"
+      };
 
   function copyText(text) {
     if (navigator.clipboard && navigator.clipboard.writeText) {
@@ -42,35 +55,27 @@
       }, 3200);
     }
 
-    document.querySelectorAll(".js-line-message").forEach(function (el) {
-      el.textContent = lineMessage;
-    });
-
-    // CTAリンク先を反映し、タップ時に定型文を自動コピー（遷移は妨げない）
+    // CTA：リンク先を公式LINEに統一し、タップ時に相談内容の定型文を自動コピー（遷移は妨げない）
     document.querySelectorAll(".js-cta").forEach(function (link) {
+      var message = link.getAttribute("data-line-message") || defaultMessage;
       link.setAttribute("href", ctaUrl);
       if (/^https?:\/\//.test(ctaUrl)) {
         link.setAttribute("target", "_blank");
         link.setAttribute("rel", "noopener noreferrer");
       }
       link.addEventListener("click", function () {
-        copyText(lineMessage)
-          .then(function () {
-            showToast("「" + lineMessage + "」をコピーしました。LINEに貼り付けて送ってください");
-          })
+        copyText(message)
+          .then(function () { showToast(TEXT.copied(message)); })
           .catch(function () {});
       });
     });
 
-    document.querySelectorAll(".js-copy-line-message").forEach(function (btn) {
+    // LINEメッセージ例の「コピー」ボタン
+    document.querySelectorAll(".js-copy").forEach(function (btn) {
       btn.addEventListener("click", function () {
-        copyText(lineMessage)
-          .then(function () {
-            showToast("コピーしました。LINEを開いて貼り付けてください");
-          })
-          .catch(function () {
-            showToast("コピーできませんでした。上の文字を長押しでコピーしてください");
-          });
+        copyText(btn.getAttribute("data-copy") || defaultMessage)
+          .then(function () { showToast(TEXT.copiedShort); })
+          .catch(function () { showToast(TEXT.failed); });
       });
     });
 

@@ -3,27 +3,23 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>一般社団法人 全身美容メディカルウェルネス協会（GMWBA）</title>
-<meta name="description" content="顔だけでなく全身を。美容だけでなく、身体の知識と健やかさまで。一般社団法人 全身美容メディカルウェルネス協会（GMWBA）は、安全で確かな美容技術と、それを支える知識・教育を広めるための協会です。">
+<title>一般社団法人 全身美容メディカルウェルネス協会（GMWBA）公式サイト</title>
+<meta name="description" content="一般社団法人 全身美容メディカルウェルネス協会（General Medical Wellness Beauty Association / GMWBA）は、美容・ウェルネス事業者の技術・衛生・法令・経営を支え、未病ケアの普及と、国内外のネットワーク・教育・認定体制づくりに取り組む協会です。">
 <meta name="robots" content="index,follow">
-<link rel="canonical" href="https://example.com/gmwba/">
+<!-- TODO: 本番ドメイン確定後、canonical / hreflang（https://〇〇/gmwba/ と /gmwba/en/）/ og:url / og:image を追加 -->
 
-<!-- OGP -->
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="全身美容メディカルウェルネス協会（GMWBA）">
+<meta property="og:site_name" content="GMWBA 全身美容メディカルウェルネス協会">
 <meta property="og:title" content="一般社団法人 全身美容メディカルウェルネス協会（GMWBA）">
-<meta property="og:description" content="美しさは、健やかな身体から。全身美容 × 身体の知識 × ウェルネスで、安全で確かな美容技術を次の世代へ。">
-<meta property="og:url" content="https://example.com/gmwba/">
-<meta property="og:image" content="https://example.com/og-image.png">
+<meta property="og:description" content="美容・ウェルネス事業者の技術・衛生・法令・経営を支え、世界へつなぐ協会。">
 <meta property="og:locale" content="ja_JP">
+<meta property="og:locale:alternate" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
 
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700&family=Noto+Sans+JP:wght@300;400;500;700&family=Cormorant+Garamond:wght@500;600&display=swap" rel="stylesheet">
-
 <link rel="stylesheet" href="css/gmwba.css">
 </head>
 <body>
@@ -34,9 +30,13 @@
   <div class="header__inner">
     <a href="#top" class="header__logo">
       <span class="header__logo-en">GMWBA</span>
-      <span class="header__logo-ja">全身美容メディカルウェルネス協会</span>
+      <span class="header__logo-sub">全身美容メディカルウェルネス協会</span>
     </a>
-    <a href="#" class="btn btn--primary btn--small js-cta">LINEで問い合わせ</a>
+    <nav class="lang-switch" aria-label="言語切り替え">
+      <span aria-current="true">JP</span>
+      <a href="en/" hreflang="en" lang="en">EN</a>
+    </nav>
+    <a href="#" class="btn btn--gold btn--small js-cta" data-line-message="入会相談">入会相談</a>
   </div>
 </header>
 
@@ -46,83 +46,91 @@
   <section class="hero" id="top" aria-label="ファーストビュー">
     <div class="hero__inner">
       <div class="hero__body">
-        <p class="hero__org">一般社団法人<br>全身美容メディカルウェルネス協会</p>
+        <p class="hero__org">一般社団法人 全身美容メディカルウェルネス協会<span class="hero__org-en">General Medical Wellness Beauty Association</span></p>
         <p class="hero__mark">GMWBA</p>
-        <h1 class="hero__title">
-          美しさは、<br>
-          <span class="hero__title-accent">健やかな身体から。</span>
-        </h1>
-        <p class="hero__lead">
-          顔だけではなく、全身を。<br>
-          美容だけではなく、身体の知識と健やかさまで。<br>
-          安全で確かな美容技術を、次の世代へ。
-        </p>
-        <ul class="hero__pillars" aria-label="協会の3つの柱">
-          <li>全身美容</li>
-          <li>メディカル<br class="sp-only">知識</li>
-          <li>ウェルネス</li>
-        </ul>
-        <div class="hero__cta">
-          <a href="#" class="btn btn--primary btn--large js-cta">公式LINEで問い合わせる</a>
-          <a href="#about" class="btn btn--ghost btn--large">協会について見る</a>
+        <h1 class="hero__title">美と健やかさに、<br><span class="hero__title-accent">確かな基準を。</span></h1>
+        <p class="hero__lead">美容・ウェルネス事業者の<br class="sp-only">技術・衛生・法令・経営を支え、<br>国内外の仲間とつなぎ、<br class="sp-only">世界へ広げていく協会です。</p>
+
+        <dl class="answers">
+          <div class="answer"><dt class="answer__q">何のための<br>協会？</dt><dd class="answer__a">美容・ウェルネスの現場を、技術・衛生・法令・経営の面から支え、未病ケアを広めるため。</dd></div>
+          <div class="answer"><dt class="answer__q">誰のため？</dt><dd class="answer__a">国内外のサロンオーナー、エステティシャン・セラピスト、講師・スクール運営者。</dd></div>
+          <div class="answer"><dt class="answer__q">会員に<br>なると？</dt><dd class="answer__a">優待・研修・最新情報・専門家連携、そして国内外のネットワークへ。</dd></div>
+        </dl>
+
+        <div class="cta-stack">
+          <a href="#" class="btn btn--gold btn--large js-cta" data-line-message="入会相談">公式LINEで入会相談する</a>
+          <a href="#" class="btn btn--outline btn--large js-cta" data-line-message="会員について">会員について詳しく見る</a>
         </div>
       </div>
       <figure class="hero__media">
-        <img src="../IMG_0630.JPG" alt="GMWBA 代表理事 渡邊明美（Amy）" width="1400" height="2100">
-        <figcaption>代表理事　渡邊明美 / Amy</figcaption>
+        <img src="../IMG_0630.JPG" alt="GMWBA 代表理事 渡邊明美" width="1400" height="2100">
+        <figcaption>代表理事　渡邊明美</figcaption>
       </figure>
     </div>
   </section>
 
-  <!-- 2. 実績 -->
-  <section class="numbers" aria-label="代表理事の実績">
-    <ul class="numbers__list">
-      <li><span class="numbers__num">26<small>年以上</small></span><span class="numbers__label">美容・エステティック<br>業界でのキャリア</span></li>
-      <li><span class="numbers__num">30,000<small>名以上</small></span><span class="numbers__label">施術実績</span></li>
-      <li><span class="numbers__num">10,000<small>名以上</small></span><span class="numbers__label">技術者・セラピスト<br>育成実績</span></li>
-      <li><span class="numbers__num">6<small>カ国</small></span><span class="numbers__label">海外からの受講</span></li>
-    </ul>
-  </section>
-
-  <!-- 3. 背景・課題 -->
-  <section class="section section--white" aria-labelledby="issue-title">
+  <!-- 2. 業界の課題 -->
+  <section class="section section--dark" aria-labelledby="issue-title">
     <div class="section__inner">
-      <p class="eyebrow">BACKGROUND</p>
-      <h2 class="title" id="issue-title">お客様の身体に<br class="sp-only">触れる仕事だからこそ。</h2>
-      <p class="lead">美容の技術は、お客様の皮膚や身体に<br class="sp-only">直接触れる仕事です。<br>技術の美しさと同じくらい、<br class="sp-only">「安全に、確かな結果を届ける知識」が<br class="sp-only">求められています。</p>
-      <ul class="issue-list">
-        <li>手技は学んだが、身体の構造や仕組みまでは学ぶ機会が少なかった</li>
-        <li>禁忌や体調の変化など、施術前に確認すべきことに自信がない</li>
-        <li>衛生管理・感染症対策を、自己流で行っている</li>
-        <li>フェイシャルだけでなく、全身の視点からお客様を見たい</li>
-        <li>技術を「なぜそうするのか」まで説明できる技術者になりたい</li>
+      <div class="section__head">
+        <p class="eyebrow">ISSUES</p>
+        <h2 class="title" id="issue-title">美容・ウェルネスの現場は、<br>ひとりで抱えるには<br class="sp-only">課題が多すぎる。</h2>
+      </div>
+      <ul class="issues">
+        <li>技術を学んだあと、アップデートの機会がなく自己流になっている</li>
+        <li>衛生管理や感染症対策、施術の禁忌に、確かな基準がほしい</li>
+        <li>契約や表示など、守るべき法令がよくわからない</li>
+        <li>集客・価格・人材など、経営の相談相手がいない</li>
+        <li>海外のお客様や、海外での活動にも挑戦したい</li>
       </ul>
-      <p class="emphasis">技術 × 身体の知識 × 健やかさ。<br>その3つがそろってはじめて、<br class="sp-only">お客様から信頼される美容になる。</p>
+      <p class="emphasis">だから、業界をつなぎ、<br class="sp-only">支える「協会」が必要です。</p>
     </div>
   </section>
 
-  <!-- 4. 協会について -->
-  <section class="section section--tint" id="about" aria-labelledby="about-title">
-    <div class="section__inner">
-      <p class="eyebrow">ABOUT</p>
-      <h2 class="title" id="about-title">全身美容メディカル<br class="sp-only">ウェルネス協会とは</h2>
-      <p class="lead">美容を「顔」や「見た目」だけで<br class="sp-only">捉えるのではなく、<br>身体全体の知識と、<br class="sp-only">心身の健やかさまでを含めた<br>「全身美容」として<br class="sp-only">広めていくための協会です。</p>
+  <!-- 3. ミッション -->
+  <section class="section section--ivory" aria-labelledby="mission-title">
+    <div class="section__inner section__inner--narrow mission">
+      <div class="section__head">
+        <p class="eyebrow">MISSION</p>
+        <h2 class="title" id="mission-title">GMWBAが目指すこと</h2>
+      </div>
+      <p class="mission__statement">確かな技術と知識で、<br>お客様の美しさと健やかさを支える<br class="sp-only">事業者を増やし、<br>日本から世界へ届けていく。</p>
+      <p class="mission__text">顔だけでなく全身を、美容だけでなく心身の健やかさまで。<br>「全身美容」と「未病ケア」の視点を持つ技術者・サロン・講師を、国内外で育て、つなぎ、支えていきます。</p>
+    </div>
+  </section>
 
-      <div class="pillars">
-        <article class="pillar">
-          <p class="pillar__en">Whole Body Beauty</p>
-          <h3 class="pillar__title">全身美容</h3>
-          <p class="pillar__text">顔・頭・身体はつながっています。部分ではなく全身を見て、施術を組み立てる視点を大切にします。</p>
+  <!-- 4. 5つの役割 -->
+  <section class="section section--black" id="roles" aria-labelledby="roles-title">
+    <div class="section__inner">
+      <div class="section__head">
+        <p class="eyebrow">WHAT WE DO</p>
+        <h2 class="title" id="roles-title">GMWBAの5つの役割</h2>
+      </div>
+      <div class="cards cards--3">
+        <article class="card">
+          <p class="card__num">01</p>
+          <h3 class="card__title">事業者の<br>技術・衛生・法令・経営を支援</h3>
+          <p class="card__text">技術の向上から、衛生管理、守るべき法令、サロン経営まで。現場が安心して続けられるよう支えます。</p>
         </article>
-        <article class="pillar">
-          <p class="pillar__en">Medical Knowledge</p>
-          <h3 class="pillar__title">メディカル知識</h3>
-          <p class="pillar__text">解剖学、衛生管理、感染症、禁忌など、安全な施術を支える基礎知識を重視します。</p>
+        <article class="card">
+          <p class="card__num">02</p>
+          <h3 class="card__title">未病ケアの普及</h3>
+          <p class="card__text">病気になる前の「なんとなく不調」に寄り添うケアの考え方を、事業者とお客様へ広めます。</p>
         </article>
-        <article class="pillar">
-          <p class="pillar__en">Wellness</p>
-          <h3 class="pillar__title">ウェルネス</h3>
-          <p class="pillar__text">美しさの土台となる、睡眠・リラクゼーション・身体のケアまで含めた健やかさを大切にします。</p>
+        <article class="card">
+          <p class="card__num">03</p>
+          <h3 class="card__title">国内外のネットワーク形成</h3>
+          <p class="card__text">技術者・講師・サロンが、国や地域を越えてつながり、学び合える場をつくります。</p>
+        </article>
+        <article class="card">
+          <p class="card__num">04</p>
+          <h3 class="card__title">教育・認定・ライセンス体制</h3>
+          <p class="card__text">国際展開を見据え、確かな技術と知識を証明できる教育・認定・ライセンスの仕組みを整えます。</p>
+        </article>
+        <article class="card">
+          <p class="card__num">05</p>
+          <h3 class="card__title">会員向けサービス</h3>
+          <p class="card__text">会員向けの優待、研修、最新情報の提供、専門家との連携で、日々の活動を後押しします。</p>
         </article>
       </div>
     </div>
@@ -131,81 +139,201 @@
   <!-- 中間CTA -->
   <section class="mid-cta" aria-label="お問い合わせのご案内">
     <p class="mid-cta__lead">協会の活動について、<br class="sp-only">公式LINEでご案内しています。</p>
-    <a href="#" class="btn btn--primary btn--large js-cta">公式LINEで問い合わせる</a>
+    <a href="#" class="btn btn--gold btn--large js-cta" data-line-message="お問い合わせ">公式LINEで問い合わせる</a>
   </section>
 
-  <!-- 5. 活動内容 -->
-  <section class="section section--white" aria-labelledby="activity-title">
+  <!-- 5. 会員メリット -->
+  <section class="section section--ivory" id="benefits" aria-labelledby="benefits-title">
     <div class="section__inner">
-      <p class="eyebrow">ACTIVITIES</p>
-      <h2 class="title" id="activity-title">協会の活動</h2>
-      <!-- TODO: 認定講座・会員制度など、協会独自の制度がある場合はここに追記してください（名称・料金は確認後に掲載） -->
-      <div class="activities">
-        <article class="activity">
-          <p class="activity__num">01</p>
-          <h3 class="activity__title">技術と知識の教育</h3>
-          <p class="activity__text">現場で培われた技術に加え、身体の知識・衛生管理・安全な施術のための基礎を、体系的に学ぶ場をつくります。</p>
-        </article>
-        <article class="activity">
-          <p class="activity__num">02</p>
-          <h3 class="activity__title">技術者・指導者の育成</h3>
-          <p class="activity__text">技術者として終わらず、お客様から選ばれるプロへ。そして次の技術者を育てる指導者へ。人を育てる教育に取り組みます。</p>
-        </article>
-        <article class="activity">
-          <p class="activity__num">03</p>
-          <h3 class="activity__title">国内外への発信</h3>
-          <p class="activity__text">Beautyworld Japanでの技術デモンストレーションや、海外での技術指導を通して、日本の美容技術と教育を発信します。</p>
-        </article>
-        <article class="activity">
-          <p class="activity__num">04</p>
-          <h3 class="activity__title">美容とウェルネスの普及</h3>
-          <p class="activity__text">美容を「健やかさ」とともに捉える考え方を、技術者・サロン・お客様へ広げていきます。</p>
-        </article>
+      <div class="section__head">
+        <p class="eyebrow">MEMBER BENEFITS</p>
+        <h2 class="title" id="benefits-title">会員になるメリット</h2>
+      </div>
+      <ul class="benefits">
+        <li class="benefit">
+          <div class="benefit__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 12v8H4v-8M2 7h20v5H2zM12 20V7M12 7H7.5a2.5 2.5 0 1 1 0-5C11 2 12 7 12 7zm0 0h4.5a2.5 2.5 0 1 0 0-5C13 2 12 7 12 7z"/></svg></div>
+          <p class="benefit__title">会員優待</p>
+          <p class="benefit__text">会員向けの各種優待</p>
+        </li>
+        <li class="benefit">
+          <div class="benefit__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 4h7a3 3 0 0 1 3 3v13a2 2 0 0 0-2-2H2zM22 4h-7a3 3 0 0 0-3 3v13a2 2 0 0 1 2-2h8z"/></svg></div>
+          <p class="benefit__title">研修・講習</p>
+          <p class="benefit__text">技術・衛生・経営を学び続ける機会</p>
+        </li>
+        <li class="benefit">
+          <div class="benefit__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16v16H4zM8 8h8M8 12h8M8 16h5"/></svg></div>
+          <p class="benefit__title">最新情報</p>
+          <p class="benefit__text">業界動向・法令・技術の情報</p>
+        </li>
+        <li class="benefit">
+          <div class="benefit__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M16 4.5a3.5 3.5 0 0 1 0 7M18 14.5a6.5 6.5 0 0 1 3.5 5.5"/></svg></div>
+          <p class="benefit__title">専門家連携</p>
+          <p class="benefit__text">現場の悩みを専門家につなぐ</p>
+        </li>
+        <li class="benefit">
+          <div class="benefit__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="9" r="6"/><path d="M8.5 14 7 22l5-3 5 3-1.5-8"/></svg></div>
+          <p class="benefit__title">認定・ライセンス</p>
+          <p class="benefit__text">確かな技術と知識の証明へ</p>
+        </li>
+        <li class="benefit">
+          <div class="benefit__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9.5"/><path d="M2.5 12h19M12 2.5c2.8 3 2.8 16 0 19M12 2.5c-2.8 3-2.8 16 0 19"/></svg></div>
+          <p class="benefit__title">国内外<br class="sp-only">ネットワーク</p>
+          <p class="benefit__text">技術者・講師・サロンとつながる</p>
+        </li>
+      </ul>
+      <p class="inquiry-box">優待・研修の具体的な内容は、<br class="sp-only"><strong>詳しくは公式LINEへお問い合わせください。</strong></p>
+      <div class="cta-stack" style="margin-top: 28px;">
+        <a href="#" class="btn btn--gold btn--large js-cta" data-line-message="会員について">会員について詳しく見る</a>
       </div>
     </div>
   </section>
 
-  <!-- 6. 発信の実績 -->
-  <section class="section section--dark" aria-labelledby="record-title">
+  <!-- 6. 対象者 -->
+  <section class="section section--dark" id="for-you" aria-labelledby="target-title">
     <div class="section__inner">
-      <p class="eyebrow eyebrow--light">ACHIEVEMENTS</p>
-      <h2 class="title title--light" id="record-title">日本の美容技術を、<br class="sp-only">国内外へ。</h2>
+      <div class="section__head">
+        <p class="eyebrow">WHO IT'S FOR</p>
+        <h2 class="title" id="target-title">こんな方のための協会です</h2>
+      </div>
+      <div class="targets">
+        <div class="target">
+          <p class="target__label">SALON</p>
+          <p class="target__title">サロン・事業者</p>
+          <ul>
+            <li>エステ・リラクゼーション・ウェルネスサロンのオーナー</li>
+            <li>これからサロンを開業する方</li>
+            <li>衛生・法令・経営の基準を整えたい方</li>
+          </ul>
+        </div>
+        <div class="target">
+          <p class="target__label">PROFESSIONAL</p>
+          <p class="target__title">技術者・講師</p>
+          <ul>
+            <li>エステティシャン・セラピスト</li>
+            <li>講師・スクール運営者</li>
+            <li>技術と知識を証明し、活躍の場を広げたい方</li>
+          </ul>
+        </div>
+        <div class="target">
+          <p class="target__label">GLOBAL</p>
+          <p class="target__title">海外の事業者・技術者</p>
+          <ul>
+            <li>日本の美容技術・教育を学びたい方</li>
+            <li>自国で日本式の技術を広めたい方</li>
+            <li>日本の技術者・サロンとつながりたい方</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
 
+  <!-- 7. 未病ケア -->
+  <section class="section section--ivory" aria-labelledby="mibyo-title">
+    <div class="section__inner">
+      <div class="section__head">
+        <p class="eyebrow">PRE-SYMPTOMATIC CARE</p>
+        <h2 class="title" id="mibyo-title">美容の現場から、<br class="sp-only">未病ケアを。</h2>
+      </div>
+      <div class="mibyo">
+        <div class="mibyo__def">
+          <p class="mibyo__term">未病<span>Mibyo</span></p>
+          <p class="mibyo__body">病気ではないけれど、健康とも言い切れない状態。<br>疲れ・こり・眠りの質・ストレスなど、日々の「なんとなく不調」に気づき、整えていくことが未病ケアです。</p>
+        </div>
+        <ul class="mibyo__list">
+          <li>お客様の身体に、日常的に触れているのが美容・ウェルネスの現場</li>
+          <li>だからこそ、不調の小さなサインに気づける</li>
+          <li>正しい知識と安全な技術で、健やかさを支える存在へ</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. 教育・認定・ライセンス -->
+  <section class="section section--black" id="license" aria-labelledby="path-title">
+    <div class="section__inner">
+      <div class="section__head">
+        <p class="eyebrow">EDUCATION &amp; LICENSE</p>
+        <h2 class="title" id="path-title">学ぶ、証明する、<br class="sp-only">世界で活かす。</h2>
+        <p class="lead">国際展開を見据えた、教育・認定・ライセンスの体制づくりに取り組んでいます。</p>
+      </div>
+      <ol class="pathway">
+        <li><p class="pathway__title">研修・講習で学ぶ</p><p class="pathway__text">技術・衛生・法令・経営を、現場目線で体系的に学びます。</p></li>
+        <li><p class="pathway__title">認定</p><p class="pathway__text">学んだ技術と知識を、協会として認定します。</p></li>
+        <li><p class="pathway__title">ライセンス</p><p class="pathway__text">講師・サロンとして、技術を伝え、提供できる立場へ。</p></li>
+        <li><p class="pathway__title">国内外で活躍</p><p class="pathway__text">日本の美容技術を、国や地域を越えて広げていきます。</p></li>
+      </ol>
+      <p class="inquiry-box" style="max-width: 720px; margin-left: auto; margin-right: auto;">認定・ライセンスの名称や取得方法は、<br class="sp-only"><strong>詳しくは公式LINEへお問い合わせください。</strong></p>
+      <div class="cta-stack" style="margin-top: 28px;">
+        <a href="#" class="btn btn--gold btn--large js-cta" data-line-message="研修相談">研修／講習について相談する</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. 実績・ネットワーク -->
+  <section class="section section--dark" aria-labelledby="network-title">
+    <div class="section__inner">
+      <div class="section__head">
+        <p class="eyebrow">GLOBAL NETWORK</p>
+        <h2 class="title" id="network-title">日本の美容技術を、<br class="sp-only">世界へ。</h2>
+      </div>
+      <ul class="stats" aria-label="代表理事の実績">
+        <li><p class="stats__num">26<small>年以上</small></p><p class="stats__label">美容・エステティック<br>業界でのキャリア</p></li>
+        <li><p class="stats__num">30,000<small>名以上</small></p><p class="stats__label">施術実績</p></li>
+        <li><p class="stats__num">10,000<small>名以上</small></p><p class="stats__label">技術者・セラピスト<br>育成実績</p></li>
+        <li><p class="stats__num">6<small>カ国</small></p><p class="stats__label">海外からの受講</p></li>
+      </ul>
       <div class="record">
-        <div class="record__block">
-          <div class="record__photos record__photos--2">
+        <div>
+          <div class="record__photos">
+            <img src="../worldwide-group.jpg" alt="海外受講生と修了証を手にした集合写真" loading="lazy">
+            <img src="../IMG_0388.jpg" alt="海外受講生への実技指導の様子" loading="lazy">
+          </div>
+          <h3 class="record__title">世界6カ国から受講</h3>
+          <ul class="countries"><li>香港</li><li>オーストラリア</li><li>イギリス</li><li>アメリカ</li><li>メキシコ</li><li>イタリア</li></ul>
+          <p class="record__text">代表理事自らが直接技術指導を実施。技術を伝えるだけでなく、現地で活躍する技術者・指導者の育成にも取り組んでいます。</p>
+        </div>
+        <div>
+          <div class="record__photos">
             <img src="../beautyworld-1.jpg" alt="Beautyworld Japanでの技術デモンストレーションの様子" loading="lazy">
             <img src="../IMG_0650.jpg" alt="技術デモンストレーションに集まる美容関係者" loading="lazy">
           </div>
           <h3 class="record__title">Beautyworld Japan 出展・技術デモンストレーション</h3>
           <p class="record__text">多くの美容・エステ関係者が集まる会場で、技術デモンストレーション・技術解説を実施。「なぜこの技術を行うのか」「身体をどう見て、結果につなげるのか」という考え方まで伝えています。</p>
         </div>
-
-        <div class="record__block">
-          <div class="record__photos record__photos--2">
-            <img src="../worldwide-group.jpg" alt="海外受講生と修了証を手にした集合写真" loading="lazy">
-            <img src="../IMG_0388.jpg" alt="海外受講生への実技指導の様子" loading="lazy">
-          </div>
-          <h3 class="record__title">世界6カ国から受講</h3>
-          <ul class="record__countries">
-            <li>香港</li><li>オーストラリア</li><li>イギリス</li><li>アメリカ</li><li>メキシコ</li><li>イタリア</li>
-          </ul>
-          <p class="record__text">代表理事自らが直接技術指導を実施。技術を伝えるだけでなく、現地で活躍する技術者・指導者の育成にも取り組んでいます。</p>
-        </div>
       </div>
     </div>
   </section>
 
-  <!-- 7. 代表理事 -->
-  <section class="section section--tint" aria-labelledby="profile-title">
+  <!-- 10. 入会について -->
+  <section class="section section--ivory" id="join" aria-labelledby="join-title">
     <div class="section__inner">
-      <p class="eyebrow">REPRESENTATIVE</p>
-      <h2 class="title" id="profile-title">代表理事</h2>
+      <div class="section__head">
+        <p class="eyebrow">MEMBERSHIP</p>
+        <h2 class="title" id="join-title">入会について</h2>
+      </div>
+      <p class="inquiry-box" style="margin-top: 0;">会員種別・年会費・入会条件は、<br class="sp-only"><strong>詳しくは公式LINEへお問い合わせください。</strong><br>ご状況に合わせて、個別にご案内いたします。</p>
+      <ol class="steps">
+        <li class="step"><p class="step__num">STEP<strong>1</strong></p><div><p class="step__title">公式LINEを友だち追加</p><p class="step__text">下のボタンから登録</p></div></li>
+        <li class="step"><p class="step__num">STEP<strong>2</strong></p><div><p class="step__title">「入会相談」と送信</p><p class="step__text">ボタンを押すと自動でコピーされます</p></div></li>
+        <li class="step"><p class="step__num">STEP<strong>3</strong></p><div><p class="step__title">個別にご案内</p><p class="step__text">会員種別・年会費・特典をご説明</p></div></li>
+        <li class="step"><p class="step__num">STEP<strong>4</strong></p><div><p class="step__title">お申し込み・入会</p><p class="step__text">ご納得いただいてからお手続き</p></div></li>
+      </ol>
+      <div class="cta-stack" style="margin-top: 32px;">
+        <a href="#" class="btn btn--gold btn--large js-cta" data-line-message="入会相談">公式LINEで入会相談する</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 11. 代表理事 -->
+  <section class="section section--black" aria-labelledby="profile-title">
+    <div class="section__inner">
+      <div class="section__head">
+        <p class="eyebrow">REPRESENTATIVE</p>
+        <h2 class="title" id="profile-title">代表理事</h2>
+      </div>
       <div class="profile">
-        <div class="profile__photo">
-          <img src="../IMG_0631.JPG" alt="代表理事 渡邊明美（Amy）" loading="lazy">
-        </div>
-        <div class="profile__body">
+        <div class="profile__photo"><img src="../IMG_0631.JPG" alt="代表理事 渡邊明美" loading="lazy"></div>
+        <div>
           <p class="profile__name">渡邊明美<span>Akemi Watanabe / Amy</span></p>
           <ul class="profile__roles">
             <li>一般社団法人 全身美容メディカルウェルネス協会（GMWBA）代表理事</li>
@@ -221,77 +349,76 @@
     </div>
   </section>
 
-  <!-- 8. 関連ブランド -->
-  <section class="section section--white" aria-labelledby="brand-title">
-    <div class="section__inner">
-      <p class="eyebrow">RELATED BRANDS</p>
-      <h2 class="title" id="brand-title">関連スクール・ブランド</h2>
-      <div class="brands">
-        <div class="brand">
-          <p class="brand__name">天空睡眠®</p>
-          <p class="brand__text">ドライヘッドスパ専門スクール</p>
-        </div>
-        <div class="brand">
-          <p class="brand__name">ストレスリリーブ®</p>
-          <p class="brand__text">筋膜×スポーツストレッチの技術スクール</p>
-        </div>
-        <a class="brand brand--link" href="../">
-          <p class="brand__name">Amy Salon Business Academy</p>
-          <p class="brand__text">サロン経営・現場運営を学ぶAcademy</p>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- 9. FAQ -->
-  <section class="section section--tint" aria-labelledby="faq-title">
+  <!-- 12. FAQ -->
+  <section class="section section--ivory" aria-labelledby="faq-title">
     <div class="section__inner section__inner--narrow">
-      <p class="eyebrow">FAQ</p>
-      <h2 class="title" id="faq-title">よくあるご質問</h2>
+      <div class="section__head">
+        <p class="eyebrow">FAQ</p>
+        <h2 class="title" id="faq-title">よくあるご質問</h2>
+      </div>
       <div class="faq">
         <details class="faq__item">
-          <summary>どのような方が対象ですか？</summary>
-          <p>エステティシャン・セラピスト・サロンオーナー、これから美容の仕事を始めたい方、スクールや人材育成に携わる方など、美容と身体の知識を深めたい方を対象としています。</p>
+          <summary>個人の技術者でも入会できますか？</summary>
+          <p>サロンオーナーだけでなく、エステティシャン・セラピスト・講師など、美容・ウェルネスに携わる方を対象としています。入会条件は、詳しくは公式LINEへお問い合わせください。</p>
         </details>
         <details class="faq__item">
-          <summary>協会の講座や活動に参加するにはどうすればよいですか？</summary>
-          <p>公式LINEよりお問い合わせください。活動内容やご参加方法について、個別にご案内いたします。</p>
+          <summary>会員種別や年会費を教えてください。</summary>
+          <p>詳しくは公式LINEへお問い合わせください。ご状況に合わせてご案内いたします。</p>
         </details>
         <details class="faq__item">
-          <summary>費用について教えてください。</summary>
-          <p>内容によって異なります。詳細は公式LINEにてご案内しています。</p>
+          <summary>認定・ライセンスはどのように取得できますか？</summary>
+          <p>名称・取得方法・費用は、詳しくは公式LINEへお問い合わせください。</p>
+        </details>
+        <details class="faq__item">
+          <summary>研修・講習だけの相談もできますか？</summary>
+          <p>はい。公式LINEに「研修相談」と送っていただければ、内容に応じてご案内いたします。</p>
+        </details>
+        <details class="faq__item">
+          <summary>海外在住でも入会・受講できますか？</summary>
+          <p>海外の事業者・技術者の方からのご相談も受け付けています。詳しくは公式LINEへお問い合わせください。</p>
         </details>
       </div>
     </div>
   </section>
 
-  <!-- 10. 協会概要 -->
-  <section class="section section--white" aria-labelledby="outline-title">
+  <!-- 13. 協会概要 -->
+  <section class="section section--dark" aria-labelledby="outline-title">
     <div class="section__inner section__inner--narrow">
-      <p class="eyebrow">OUTLINE</p>
-      <h2 class="title" id="outline-title">協会概要</h2>
-      <!-- TODO: 所在地・設立年月日・事業内容など、正式な情報が確定したら行を追加してください -->
+      <div class="section__head">
+        <p class="eyebrow">ABOUT GMWBA</p>
+        <h2 class="title" id="outline-title">協会概要</h2>
+      </div>
+      <!-- TODO: 所在地・設立年月日など、正式な情報が確定したら行を追加 -->
       <dl class="outline">
-        <div><dt>名称</dt><dd>一般社団法人 全身美容メディカルウェルネス協会（GMWBA）</dd></div>
+        <div><dt>名称</dt><dd>一般社団法人 全身美容メディカルウェルネス協会</dd></div>
+        <div><dt>英語表記</dt><dd>General Medical Wellness Beauty Association（GMWBA）</dd></div>
         <div><dt>代表理事</dt><dd>渡邊明美</dd></div>
-        <div><dt>関連法人</dt><dd>株式会社アミノエル<br>株式会社アミノエルビューティアカデミー</dd></div>
-        <div><dt>お問い合わせ</dt><dd>公式LINEよりお問い合わせください</dd></div>
+        <div><dt>主な活動</dt><dd>美容・ウェルネス事業者の技術・衛生・法令・経営の支援／未病ケアの普及／国内外のネットワーク形成／教育・認定・ライセンス体制の整備／会員向け優待・研修・情報提供・専門家連携</dd></div>
+        <div><dt>お問い合わせ</dt><dd>GMWBA公式LINE</dd></div>
       </dl>
     </div>
   </section>
 
-  <!-- 11. 最終CTA -->
-  <section class="section section--dark section--final" aria-labelledby="final-title">
+  <!-- 14. 最終CTA -->
+  <section class="section final" aria-labelledby="final-title">
     <div class="section__inner">
-      <p class="eyebrow eyebrow--light">CONTACT</p>
-      <h2 class="title title--light" id="final-title">美しさと健やかさを、<br>確かな技術と知識で。</h2>
-      <p class="lead lead--light">協会の活動・ご参加について、<br class="sp-only">お気軽にお問い合わせください。</p>
-      <a href="#" class="btn btn--primary btn--large js-cta">公式LINEで問い合わせる</a>
-
+      <p class="eyebrow">CONTACT</p>
+      <h2 class="title" id="final-title">美と健やかさを支える仲間として、<br>一緒に。</h2>
+      <p class="lead">ご質問・ご相談は、すべてGMWBA公式LINEで<br class="sp-only">受け付けています。</p>
+      <div class="final__menu">
+        <a href="#" class="btn btn--gold btn--large js-cta" data-line-message="入会相談">入会相談</a>
+        <a href="#" class="btn btn--outline btn--large js-cta" data-line-message="会員について">会員について詳しく見る</a>
+        <a href="#" class="btn btn--outline btn--large js-cta" data-line-message="研修相談">研修／講習について相談</a>
+        <a href="#" class="btn btn--outline btn--large js-cta" data-line-message="お問い合わせ">その他のお問い合わせ</a>
+      </div>
       <div class="line-guide">
-        <p class="line-guide__label">LINE登録後、下記の内容を送ってください</p>
-        <p class="line-guide__box js-line-message">GMWBA</p>
-        <button type="button" class="line-guide__copy js-copy-line-message">メッセージをコピーする</button>
+        <p class="line-guide__label">LINE登録後、ご相談内容に合わせて<br class="sp-only">下記のいずれかを送ってください<br>（タップでコピーできます）</p>
+        <div class="line-guide__list">
+          <button type="button" class="line-guide__chip js-copy" data-copy="入会相談">入会相談</button>
+          <button type="button" class="line-guide__chip js-copy" data-copy="会員について">会員について</button>
+          <button type="button" class="line-guide__chip js-copy" data-copy="研修相談">研修相談</button>
+          <button type="button" class="line-guide__chip js-copy" data-copy="お問い合わせ">お問い合わせ</button>
+        </div>
       </div>
     </div>
   </section>
@@ -300,16 +427,19 @@
 
 <footer class="footer">
   <p class="footer__logo">GMWBA</p>
-  <p class="footer__name">一般社団法人 全身美容メディカルウェルネス協会</p>
+  <p class="footer__name">一般社団法人 全身美容メディカルウェルネス協会<br>General Medical Wellness Beauty Association</p>
   <nav class="footer__nav" aria-label="フッターナビゲーション">
-    <a href="#">プライバシーポリシー</a>
-    <a href="#">お問い合わせ</a>
+    <a href="#roles">5つの役割</a>
+    <a href="#benefits">会員メリット</a>
+    <a href="#for-you">対象者</a>
+    <a href="#join">入会について</a>
+    <a href="en/" hreflang="en" lang="en">English</a>
   </nav>
-  <p class="footer__copy">&copy; <span id="js-year">2026</span> GMWBA</p>
+  <p>&copy; <span id="js-year">2026</span> GMWBA</p>
 </footer>
 
 <div class="sticky-cta">
-  <a href="#" class="btn btn--primary js-cta">公式LINEで問い合わせる</a>
+  <a href="#" class="btn btn--gold js-cta" data-line-message="入会相談">公式LINEで入会相談する</a>
 </div>
 
 <p class="toast" role="status" aria-live="polite"></p>
