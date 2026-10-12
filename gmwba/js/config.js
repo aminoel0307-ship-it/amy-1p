@@ -2,11 +2,11 @@
  * GMWBA LP 設定
  *
  * 「公式LINEで問い合わせる」等のCTAボタン（.js-cta）のリンク先を一元管理します。
- * 協会専用の公式LINE・問い合わせフォームがある場合は、ctaUrl を書き換えてください。
+ * お問い合わせ・入会相談・会員案内・研修／講習相談など、GMWBA LPのCTAは原則この公式LINEに統一します。
  * lineMessage は、LINE登録後に送ってもらう定型文です（コピー用）。
  */
 window.GMWBA_CONFIG = {
-  // 現在は Amy Salon Business Academy と同じ公式LINEを設定しています
-  ctaUrl: "https://lin.ee/FCeqwRp",
+  // GMWBA公式LINE（日本語版・英語版共通）
+  ctaUrl: "https://lin.ee/LNtKbCK",
   lineMessage: "GMWBA"
 };
