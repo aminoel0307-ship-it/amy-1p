@@ -423,3 +423,50 @@ html[lang="en"] .mid-cta__lead { font-family: var(--font-en); font-size: clamp(1
   opacity: 0; pointer-events: none; transition: opacity .3s ease, transform .3s ease;
 }
 .toast.is-visible { opacity: 1; transform: translate(-50%, 0); }
+
+/* ---------- Brand message reinforcement ---------- */
+sup { font-size: 0.6em; vertical-align: super; line-height: 0; }
+
+.hero__tag {
+  display: inline-block; margin: -6px 0 18px; padding: 4px 12px;
+  border: 1px solid var(--line-gold);
+  font-family: var(--font-en); font-weight: 600; font-size: 0.86rem; letter-spacing: 0.06em;
+  color: var(--gold-light);
+}
+.hero__lead-key {
+  display: block; margin-bottom: 10px;
+  font-family: var(--font-serif); font-weight: 700; font-size: 1.05em; line-height: 1.75;
+  color: var(--ivory);
+}
+html[lang="en"] .hero__lead-key { font-family: var(--font-en); font-weight: 600; font-size: 1.25em; line-height: 1.35; }
+
+.viewpoints { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; margin: 28px 0 4px; }
+.viewpoints li {
+  padding: 14px 8px; background: var(--black); color: var(--gold-light);
+  font-family: var(--font-serif); font-weight: 700; font-size: 1.05rem; line-height: 1.4;
+}
+html[lang="en"] .viewpoints li { font-family: var(--font-en); font-size: 1.15rem; }
+.viewpoints__en { display: block; font-family: var(--font-en); font-weight: 600; font-size: 0.66rem; letter-spacing: 0.18em; color: var(--gold); margin-bottom: 2px; }
+html[lang="en"] .viewpoints__en { display: none; }
+@media (min-width: 769px) { .viewpoints { grid-template-columns: repeat(4, 1fr); } }
+
+@media (min-width: 640px) { .targets--4 { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1000px) { .targets--4 { grid-template-columns: repeat(4, 1fr); } }
+
+.programs {
+  max-width: 720px; margin: 8px auto 0; padding: 28px 20px;
+  border: 1px solid var(--line-gold); background: var(--black-3); text-align: center;
+}
+.programs__label { font-family: var(--font-en); font-weight: 600; font-size: 0.8rem; letter-spacing: 0.24em; color: var(--gold); }
+.programs__title { font-family: var(--font-serif); font-weight: 700; font-size: 1.15rem; line-height: 1.6; margin: 4px 0 10px; }
+html[lang="en"] .programs__title { font-family: var(--font-en); font-size: 1.4rem; line-height: 1.3; }
+.programs__lead { font-size: 0.86rem; color: rgba(246, 241, 231, 0.8); text-align: left; }
+.programs__list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; margin: 18px 0 14px; }
+.programs__list li { padding: 14px 8px; border: 1px solid rgba(198, 161, 91, 0.25); background: var(--black); }
+.programs__name { font-family: var(--font-en); font-weight: 600; font-size: 1.2rem; line-height: 1.2; color: var(--gold-light); }
+.programs__ja { margin-top: 4px; font-size: 0.72rem; line-height: 1.5; color: rgba(246, 241, 231, 0.7); }
+.programs__note { font-size: 0.8rem; color: rgba(246, 241, 231, 0.7); }
+@media (min-width: 769px) { .programs { padding: 36px 32px; } .programs__lead { text-align: center; } .programs__list { grid-template-columns: repeat(4, 1fr); } }
+
+.footer__tag { margin-top: 10px; font-size: 0.72rem; color: rgba(246, 241, 231, 0.55); }
+.hero__org-en:lang(ja) { font-family: var(--font-serif); font-size: 0.74rem; letter-spacing: 0.02em; }
